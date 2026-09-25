@@ -17,12 +17,26 @@ export default function Header({ lang, setLang, activeTab, setActiveTab, t }) {
   return (
     <header className="header-glass">
       <div className="nav-container">
-        {/* Larger Logo Image on Upper Left */}
+        {/* Logo with Circular Icon on Upper Left */}
         <a 
           href="#home" 
           onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} 
           className="logo-brand"
+          style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}
         >
+          <img 
+            src="/assets/logo_small.png" 
+            alt="Fabmaru Photo Icon" 
+            style={{ 
+              height: '46px', 
+              width: '46px', 
+              borderRadius: '50%', 
+              objectFit: 'cover',
+              border: '1.5px solid rgba(0, 102, 255, 0.4)',
+              boxShadow: '0 0 12px rgba(0, 102, 255, 0.25)',
+              flexShrink: 0
+            }}
+          />
           <img 
             src="/assets/logo_main.png" 
             alt="Fabmaru Photo Logo" 
