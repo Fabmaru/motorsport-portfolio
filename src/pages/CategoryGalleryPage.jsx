@@ -219,6 +219,7 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                 <div
                   key={item.id}
                   onClick={() => onSelectPhoto(item, filteredItems)}
+                  onContextMenu={(e) => e.preventDefault()}
                   className="gallery-item glass-card"
                   style={{
                     position: 'relative',
@@ -232,6 +233,9 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                     src={item.image}
                     alt={itemTitle || 'Gallery photo'}
                     loading="lazy"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
                     style={{
                       width: '100%',
                       height: '100%',
@@ -292,6 +296,9 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                   <img
                     src={otherCat.bannerImage}
                     alt={otherTitle}
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
                     style={{
                       position: 'absolute',
                       inset: 0,

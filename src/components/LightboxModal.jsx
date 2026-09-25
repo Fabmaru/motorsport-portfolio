@@ -17,7 +17,7 @@ export default function LightboxModal({ item, items, onClose, onNavigate, lang, 
   if (!item) return null;
 
   return (
-    <div className="lightbox-backdrop">
+    <div className="lightbox-backdrop" onContextMenu={(e) => e.preventDefault()}>
       {/* Top Bar Actions */}
       <div style={{
         position: 'absolute',
@@ -126,13 +126,19 @@ export default function LightboxModal({ item, items, onClose, onNavigate, lang, 
         <img
           src={item.image}
           alt="Photo Preview"
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
+          onDragStart={(e) => e.preventDefault()}
           style={{
             maxWidth: '100%',
             maxHeight: '82vh',
             objectFit: 'contain',
             borderRadius: 'var(--radius-sm)',
             boxShadow: '0 20px 50px rgba(0, 0, 0, 0.9)',
-            border: '1px solid var(--border-light)'
+            border: '1px solid var(--border-light)',
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+            WebkitTouchCallout: 'none'
           }}
         />
       </div>
