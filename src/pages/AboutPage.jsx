@@ -79,9 +79,6 @@ export default function AboutPage({ lang, t }) {
               <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#FFFFFF' }}>
                 FABMARU PHOTO
               </div>
-              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                {t.contact.details.availability}
-              </div>
             </div>
           </div>
         </div>

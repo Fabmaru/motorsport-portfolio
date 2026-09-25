@@ -101,8 +101,7 @@ export const translations = {
         email: "fabio@fabmaruphoto.com",
         phone: "+351 912 345 678",
         instagram: "@fabmaruphoto",
-        facebook: "@fabmaruphoto",
-        availability: "Accredited FIA / FIM Media Pass Holder"
+        facebook: "@fabmaruphoto"
       }
     },
     footer: {
@@ -213,8 +212,7 @@ export const translations = {
         email: "fabio@fabmaruphoto.com",
         phone: "+351 912 345 678",
         instagram: "@fabmaruphoto",
-        facebook: "@fabmaruphoto",
-        availability: "Passe de Imprensa Acreditado FIA / FIM"
+        facebook: "@fabmaruphoto"
       }
     },
     footer: {
