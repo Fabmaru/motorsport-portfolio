@@ -1,4 +1,76 @@
 {
+  "redirects": [
+    {
+      "source": "/contactos",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/contactos/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/sobre",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/sobre/",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/automovel",
+      "destination": "/portfolio/automotive/",
+      "permanent": true
+    },
+    {
+      "source": "/automovel/",
+      "destination": "/portfolio/automotive/",
+      "permanent": true
+    },
+    {
+      "source": "/portefolio",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/portefolio/",
+      "destination": "/portfolio/",
+      "permanent": true
+    },
+    {
+      "source": "/sports",
+      "destination": "/portfolio/sports/",
+      "permanent": true
+    },
+    {
+      "source": "/sports/",
+      "destination": "/portfolio/sports/",
+      "permanent": true
+    },
+    {
+      "source": "/desporto",
+      "destination": "/portfolio/sports/",
+      "permanent": true
+    },
+    {
+      "source": "/desporto/",
+      "destination": "/portfolio/sports/",
+      "permanent": true
+    },
+    {
+      "source": "/motorsport",
+      "destination": "/portfolio/motorsport/",
+      "permanent": true
+    },
+    {
+      "source": "/motorsport/",
+      "destination": "/portfolio/motorsport/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
