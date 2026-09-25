@@ -20,7 +20,7 @@ export function setPageMeta(title, description) {
     canonicalLink.setAttribute('rel', 'canonical');
     document.head.appendChild(canonicalLink);
   }
-  const canonicalUrl = `https://www.fabmaruphoto.com${window.location.pathname}`;
+  const canonicalUrl = `https://fabmaruphoto.com${window.location.pathname}`;
   canonicalLink.setAttribute('href', canonicalUrl);
 }
 

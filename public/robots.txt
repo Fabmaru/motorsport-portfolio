@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.fabmaruphoto.com/sitemap.xml
+Sitemap: https://fabmaruphoto.com/sitemap.xml
