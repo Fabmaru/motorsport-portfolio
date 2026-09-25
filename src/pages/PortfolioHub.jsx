@@ -1,31 +1,25 @@
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { getCategoryUrl } from '../utils/routes';
+import { useDocumentMeta } from '../utils/seo';
 
-export default function PortfolioHub({ setActiveTab, lang, t }) {
+export default function PortfolioHub({ lang, t }) {
+  const pageTitle = lang === 'pt' 
+    ? 'Coleções de Fotografia | Fábio Martins'
+    : 'Photography Collections & Galleries | Fábio Martins';
+    
+  const pageDescription = lang === 'pt'
+    ? 'Explore as coleções de fotografia de desporto motorizado, desporto, automóveis e eventos artísticos de Fábio Martins.'
+    : 'Explore photography collections covering motorsport, sports, automotive, and artistic events by Fábio Martins.';
+
+  useDocumentMeta(pageTitle, pageDescription);
+
   return (
     <div style={{ padding: '7rem 1.5rem 5rem 1.5rem', maxWidth: '1320px', margin: '0 auto' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '4rem' }} className="animate-fade-up">
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          background: 'rgba(0, 102, 255, 0.1)',
-          border: '1px solid rgba(0, 102, 255, 0.3)',
-          padding: '0.35rem 1rem',
-          borderRadius: 'var(--radius-full)',
-          color: 'var(--accent-blue)',
-          fontSize: '0.8rem',
-          fontWeight: 800,
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          marginBottom: '1rem'
-        }}>
-          <Sparkles size={14} />
-          PHOTOGRAPHY COLLECTIONS
-        </div>
-
         <h1 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', textTransform: 'uppercase', marginBottom: '1rem' }}>
           {t.hub.title}
         </h1>
@@ -35,16 +29,17 @@ export default function PortfolioHub({ setActiveTab, lang, t }) {
         </p>
       </div>
 
-      {/* 4 Category Cards List (NO DESCRIPTIONS, ONLY MAIN TITLE & BUTTON) */}
+      {/* 4 Category Cards List */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
         {portfolioData.categories.map((cat, index) => {
           const title = lang === 'pt' ? cat.titlePt : cat.titleEn;
 
           return (
-            <div
+            <Link
               key={cat.id}
-              onClick={() => { setActiveTab(`category-${cat.id}`); window.scrollTo(0,0); }}
+              to={getCategoryUrl(cat.id)}
               className="glass-card hub-card-row"
+              style={{ textDecoration: 'none' }}
             >
               {/* Image Col */}
               <div style={{
@@ -88,25 +83,27 @@ export default function PortfolioHub({ setActiveTab, lang, t }) {
                 flexDirection: 'column',
                 justifyContent: 'center'
               }}>
-                {/* ONLY MAIN TITLE */}
                 <h2 style={{ fontSize: '2.2rem', marginBottom: '1.5rem', color: 'var(--text-main)', textTransform: 'uppercase' }}>
                   {title}
                 </h2>
 
                 <div>
-                  <button
+                  <span
                     className="btn-primary"
                     style={{
                       padding: '0.9rem 1.8rem',
-                      fontSize: '0.95rem'
+                      fontSize: '0.95rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.6rem'
                     }}
                   >
                     {t.hub.viewCategory}
                     <ArrowRight size={18} />
-                  </button>
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

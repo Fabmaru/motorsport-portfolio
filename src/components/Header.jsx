@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Globe, Menu, X, ChevronRight } from 'lucide-react';
 
-export default function Header({ lang, setLang, activeTab, setActiveTab, t }) {
+export default function Header({ lang, setLang, t }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handleNavClick = (tabId) => {
-    setActiveTab(tabId);
-    setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const location = useLocation();
+  const pathname = location.pathname;
 
   const toggleLang = () => {
     setLang(lang === 'en' ? 'pt' : 'en');
   };
 
+  const isHomeActive = pathname === '/' || pathname === '';
+  const isPortfolioActive = pathname.startsWith('/portfolio');
+  const isAboutActive = pathname.startsWith('/about');
+  const isContactActive = pathname.startsWith('/contact');
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
   return (
     <header className="header-glass">
       <div className="nav-container">
         {/* Logo with Circular Icon on Upper Left */}
-        <a 
-          href="#home" 
-          onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} 
+        <Link 
+          to="/" 
           className="logo-brand"
           style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}
+          onClick={closeMobileMenu}
         >
           <img 
             src="/assets/logo_small.png" 
@@ -42,65 +46,69 @@ export default function Header({ lang, setLang, activeTab, setActiveTab, t }) {
             alt="Fabmaru Photo Logo" 
             className="logo-img"
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
-          <button
-            onClick={() => handleNavClick('home')}
+          <Link
+            to="/"
             style={{
-              color: activeTab === 'home' ? 'var(--accent-blue)' : 'var(--text-main)',
-              fontWeight: activeTab === 'home' ? 700 : 500,
+              color: isHomeActive ? 'var(--accent-blue)' : 'var(--text-main)',
+              fontWeight: isHomeActive ? 700 : 500,
               fontSize: '0.95rem',
               transition: 'color 0.2s ease',
-              borderBottom: activeTab === 'home' ? '2px solid var(--accent-blue)' : '2px solid transparent',
-              paddingBottom: '0.25rem'
+              borderBottom: isHomeActive ? '2px solid var(--accent-blue)' : '2px solid transparent',
+              paddingBottom: '0.25rem',
+              textDecoration: 'none'
             }}
           >
             {t.nav.home}
-          </button>
+          </Link>
 
-          <button
-            onClick={() => handleNavClick('portfolio')}
+          <Link
+            to="/portfolio/"
             style={{
-              color: activeTab === 'portfolio' || activeTab.startsWith('category-') ? 'var(--accent-blue)' : 'var(--text-main)',
-              fontWeight: activeTab === 'portfolio' || activeTab.startsWith('category-') ? 700 : 500,
+              color: isPortfolioActive ? 'var(--accent-blue)' : 'var(--text-main)',
+              fontWeight: isPortfolioActive ? 700 : 500,
               fontSize: '0.95rem',
               transition: 'color 0.2s ease',
-              borderBottom: activeTab === 'portfolio' || activeTab.startsWith('category-') ? '2px solid var(--accent-blue)' : '2px solid transparent',
-              paddingBottom: '0.25rem'
+              borderBottom: isPortfolioActive ? '2px solid var(--accent-blue)' : '2px solid transparent',
+              paddingBottom: '0.25rem',
+              textDecoration: 'none'
             }}
           >
             {t.nav.portfolio}
-          </button>
+          </Link>
 
-          <button
-            onClick={() => handleNavClick('about')}
+          <Link
+            to="/about/"
             style={{
-              color: activeTab === 'about' ? 'var(--accent-blue)' : 'var(--text-main)',
-              fontWeight: activeTab === 'about' ? 700 : 500,
+              color: isAboutActive ? 'var(--accent-blue)' : 'var(--text-main)',
+              fontWeight: isAboutActive ? 700 : 500,
               fontSize: '0.95rem',
               transition: 'color 0.2s ease',
-              borderBottom: activeTab === 'about' ? '2px solid var(--accent-blue)' : '2px solid transparent',
-              paddingBottom: '0.25rem'
+              borderBottom: isAboutActive ? '2px solid var(--accent-blue)' : '2px solid transparent',
+              paddingBottom: '0.25rem',
+              textDecoration: 'none'
             }}
           >
             {t.nav.about}
-          </button>
+          </Link>
 
-          <button
-            onClick={() => handleNavClick('contact')}
+          <Link
+            to="/contact/"
             style={{
-              color: activeTab === 'contact' ? 'var(--accent-blue)' : 'var(--text-main)',
-              fontWeight: activeTab === 'contact' ? 700 : 500,
+              color: isContactActive ? 'var(--accent-blue)' : 'var(--text-main)',
+              fontWeight: isContactActive ? 700 : 500,
               fontSize: '0.95rem',
               transition: 'color 0.2s ease',
-              borderBottom: activeTab === 'contact' ? '2px solid var(--accent-blue)' : '2px solid transparent',
-              paddingBottom: '0.25rem'
+              borderBottom: isContactActive ? '2px solid var(--accent-blue)' : '2px solid transparent',
+              paddingBottom: '0.25rem',
+              textDecoration: 'none'
             }}
           >
             {t.nav.contact}
-          </button>
+          </Link>
         </nav>
 
         {/* Right Actions: Language Switcher & Book CTA */}
@@ -136,18 +144,19 @@ export default function Header({ lang, setLang, activeTab, setActiveTab, t }) {
           </button>
 
           {/* Book Session CTA Button */}
-          <button
-            onClick={() => handleNavClick('contact')}
+          <Link
+            to="/contact/"
             className="btn-primary"
             style={{
               padding: '0.55rem 1.1rem',
               fontSize: '0.85rem',
-              borderRadius: 'var(--radius-sm)'
+              borderRadius: 'var(--radius-sm)',
+              textDecoration: 'none'
             }}
           >
             {t.nav.bookSession}
             <ChevronRight size={16} />
-          </button>
+          </Link>
 
           {/* Mobile Hamburger Button */}
           <button 
@@ -170,18 +179,34 @@ export default function Header({ lang, setLang, activeTab, setActiveTab, t }) {
           flexDirection: 'column',
           gap: '1.25rem'
         }}>
-          <button onClick={() => handleNavClick('home')} style={{ color: activeTab === 'home' ? 'var(--accent-blue)' : 'var(--text-main)', textAlign: 'left', fontSize: '1.1rem', fontWeight: 600 }}>
+          <Link 
+            to="/" 
+            onClick={closeMobileMenu}
+            style={{ color: isHomeActive ? 'var(--accent-blue)' : 'var(--text-main)', textAlign: 'left', fontSize: '1.1rem', fontWeight: 600, textDecoration: 'none' }}
+          >
             {t.nav.home}
-          </button>
-          <button onClick={() => handleNavClick('portfolio')} style={{ color: activeTab === 'portfolio' ? 'var(--accent-blue)' : 'var(--text-main)', textAlign: 'left', fontSize: '1.1rem', fontWeight: 600 }}>
+          </Link>
+          <Link 
+            to="/portfolio/" 
+            onClick={closeMobileMenu}
+            style={{ color: isPortfolioActive ? 'var(--accent-blue)' : 'var(--text-main)', textAlign: 'left', fontSize: '1.1rem', fontWeight: 600, textDecoration: 'none' }}
+          >
             {t.nav.portfolio}
-          </button>
-          <button onClick={() => handleNavClick('about')} style={{ color: activeTab === 'about' ? 'var(--accent-blue)' : 'var(--text-main)', textAlign: 'left', fontSize: '1.1rem', fontWeight: 600 }}>
+          </Link>
+          <Link 
+            to="/about/" 
+            onClick={closeMobileMenu}
+            style={{ color: isAboutActive ? 'var(--accent-blue)' : 'var(--text-main)', textAlign: 'left', fontSize: '1.1rem', fontWeight: 600, textDecoration: 'none' }}
+          >
             {t.nav.about}
-          </button>
-          <button onClick={() => handleNavClick('contact')} style={{ color: activeTab === 'contact' ? 'var(--accent-blue)' : 'var(--text-main)', textAlign: 'left', fontSize: '1.1rem', fontWeight: 600 }}>
+          </Link>
+          <Link 
+            to="/contact/" 
+            onClick={closeMobileMenu}
+            style={{ color: isContactActive ? 'var(--accent-blue)' : 'var(--text-main)', textAlign: 'left', fontSize: '1.1rem', fontWeight: 600, textDecoration: 'none' }}
+          >
             {t.nav.contact}
-          </button>
+          </Link>
         </div>
       )}
     </header>

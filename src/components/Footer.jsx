@@ -1,7 +1,8 @@
 import React from 'react';
-import { Instagram, Facebook, Mail, ArrowUp } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Instagram, Facebook, ArrowUp } from 'lucide-react';
 
-export default function Footer({ setActiveTab, t }) {
+export default function Footer({ t }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -22,9 +23,9 @@ export default function Footer({ setActiveTab, t }) {
         }}>
           {/* Brand Col */}
           <div>
-            <div className="logo-brand" style={{ marginBottom: '1.25rem' }}>
+            <Link to="/" className="logo-brand" style={{ marginBottom: '1.25rem', textDecoration: 'none', display: 'inline-block' }}>
               <img src="/assets/logo_main.png" alt="Fabmaru Photo Logo" className="logo-img" style={{ height: '52px' }} />
-            </div>
+            </Link>
             
             {/* Follow Me Section */}
             <div style={{ marginBottom: '1.5rem' }}>
@@ -79,47 +80,6 @@ export default function Footer({ setActiveTab, t }) {
             </div>
           </div>
 
-          {/* Categories Links */}
-          <div>
-            <h4 style={{ fontSize: '1.05rem', marginBottom: '1.25rem', color: 'var(--text-main)' }}>
-              {t.hub.title}
-            </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <li>
-                <button 
-                  onClick={() => { setActiveTab('category-motorsport'); window.scrollTo(0,0); }}
-                  style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}
-                >
-                  {t.hub.categories.motorsport.title}
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => { setActiveTab('category-sports'); window.scrollTo(0,0); }}
-                  style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}
-                >
-                  {t.hub.categories.sports.title}
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => { setActiveTab('category-automotive'); window.scrollTo(0,0); }}
-                  style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}
-                >
-                  {t.hub.categories.automotive.title}
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => { setActiveTab('category-artistic_events'); window.scrollTo(0,0); }}
-                  style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}
-                >
-                  {t.hub.categories.artistic_events.title}
-                </button>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact Details */}
           <div>
             <h4 style={{ fontSize: '1.05rem', marginBottom: '1.25rem', color: 'var(--text-main)' }}>
@@ -131,17 +91,17 @@ export default function Footer({ setActiveTab, t }) {
             <p style={{ color: 'var(--accent-blue)', fontWeight: 600, fontSize: '0.95rem', marginBottom: '1rem' }}>
               fabio@fabmaruphoto.com
             </p>
-            <button 
-              onClick={() => { setActiveTab('contact'); window.scrollTo(0,0); }}
+            <Link 
+              to="/contact/"
               className="btn-secondary"
-              style={{ padding: '0.6rem 1.2rem', fontSize: '0.8rem' }}
+              style={{ padding: '0.6rem 1.2rem', fontSize: '0.8rem', textDecoration: 'none', display: 'inline-block' }}
             >
               {t.contact.title}
-            </button>
+            </Link>
           </div>
         </div>
 
-        {/* Bottom Bar: All images and content © Fábio Martins. All Rights Reserved. */}
+        {/* Bottom Bar */}
         <div style={{
           borderTop: '1px solid var(--border-light)',
           paddingTop: '2rem',
@@ -155,9 +115,6 @@ export default function Footer({ setActiveTab, t }) {
             {t.footer.rights}
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-            <span style={{ color: 'var(--accent-blue)', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em' }}>
-              {t.footer.tagline}
-            </span>
             <button
               onClick={scrollToTop}
               style={{
@@ -169,7 +126,8 @@ export default function Footer({ setActiveTab, t }) {
                 background: 'rgba(255, 255, 255, 0.05)',
                 padding: '0.4rem 0.8rem',
                 borderRadius: 'var(--radius-full)',
-                border: '1px solid var(--border-light)'
+                border: '1px solid var(--border-light)',
+                cursor: 'pointer'
               }}
             >
               {t.footer.backToTop}

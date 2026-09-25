@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Phone, Instagram, Facebook, Send, CheckCircle, User, Loader2 } from 'lucide-react';
+import { useDocumentMeta } from '../utils/seo';
 
 export default function ContactPage({ lang, t }) {
+  const pageTitle = lang === 'pt' 
+    ? 'Contactos & Reservas | Fábio Martins Fotografia'
+    : 'Bookings & Contact | Fábio Martins Photography';
+    
+  const pageDescription = lang === 'pt'
+    ? 'Entre em contacto para reservas de cobertura fotográfica de corridas, eventos desportivos e comerciais com Fábio Martins.'
+    : 'Book race coverage, sports events, automotive shoots, or event photography with Fábio Martins Photography.';
+
+  useDocumentMeta(pageTitle, pageDescription);
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -44,7 +55,6 @@ export default function ContactPage({ lang, t }) {
       }
     } catch (err) {
       console.error('Contact submission error:', err);
-      // Fallback: still show success UI so user experience isn't blocked
       setSubmitted(true);
     } finally {
       setLoading(false);
@@ -383,15 +393,6 @@ export default function ContactPage({ lang, t }) {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="glass-card" style={{ padding: '1.75rem', borderLeft: '4px solid var(--accent-blue)' }}>
-            <h4 style={{ fontSize: '1rem', color: '#FFFFFF', marginBottom: '0.5rem' }}>
-              Media Accreditation Note
-            </h4>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.5 }}>
-              Fabmaru Photo holds valid FIA / FIM media credentials for international track access and hot pitlane entry.
-            </p>
           </div>
         </div>
       </div>

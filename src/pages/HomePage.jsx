@@ -1,19 +1,20 @@
 import React from 'react';
-import { ArrowRight, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { getCategoryUrl } from '../utils/routes';
+import { useDocumentMeta } from '../utils/seo';
 
-export default function HomePage({ setLang, setActiveTab, t }) {
-  const handleEnterEnglish = () => {
-    setLang('en');
-    setActiveTab('portfolio');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+export default function HomePage({ lang, t }) {
+  const pageTitle = lang === 'pt' 
+    ? 'Fábio Martins | Fotógrafo de Desporto Motorizado, Desporto e Eventos em Porto'
+    : 'Fábio Martins | Motorsport, Sports & Event Photographer from Porto';
+    
+  const pageDescription = lang === 'pt'
+    ? 'Portfólio oficial de fotografia de desporto motorizado, desporto, eventos e automóveis por Fábio Martins, baseado no Porto e Braga, Portugal.'
+    : 'Official motorsport, sports, events, and automotive photography portfolio by Fábio Martins, based in the Porto and Braga region of Portugal.';
 
-  const handleEnterPortuguese = () => {
-    setLang('pt');
-    setActiveTab('portfolio');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  useDocumentMeta(pageTitle, pageDescription);
 
   return (
     <div className="speed-lines">
@@ -50,7 +51,7 @@ export default function HomePage({ setLang, setActiveTab, t }) {
           maxWidth: '980px',
           textAlign: 'center'
         }}>
-          {/* Main Title: Motorsport, Sports & Event Photographer from Porto */}
+          {/* Main Title */}
           <h1 style={{
             fontSize: 'clamp(2.3rem, 5.5vw, 4.4rem)',
             fontWeight: 900,
@@ -63,7 +64,7 @@ export default function HomePage({ setLang, setActiveTab, t }) {
             Motorsport, Sports & Event Photographer from Porto
           </h1>
 
-          {/* Subtitle Underneath */}
+          {/* Subtitle */}
           <p style={{
             fontSize: 'clamp(1.05rem, 1.8vw, 1.3rem)',
             color: 'var(--text-muted)',
@@ -77,7 +78,7 @@ export default function HomePage({ setLang, setActiveTab, t }) {
         </div>
       </section>
 
-      {/* QUICK PREVIEW OF THE 4 CATEGORY BANNERS (NO SUBTITLES, NO DESCRIPTIONS) */}
+      {/* QUICK PREVIEW OF THE 4 CATEGORY BANNERS */}
       <section style={{
         padding: '4rem 1.5rem',
         maxWidth: '1320px',
@@ -101,12 +102,13 @@ export default function HomePage({ setLang, setActiveTab, t }) {
           gap: '1.5rem'
         }}>
           {portfolioData.categories.map((cat) => {
-            const catTitle = setLang === 'pt' ? cat.titlePt : cat.titleEn;
+            const catTitle = lang === 'pt' ? cat.titlePt : cat.titleEn;
             return (
-              <div 
+              <Link 
                 key={cat.id}
-                onClick={() => { setActiveTab(`category-${cat.id}`); window.scrollTo(0,0); }}
+                to={getCategoryUrl(cat.id)}
                 className="category-card"
+                style={{ textDecoration: 'none' }}
               >
                 <img src={cat.bannerImage} alt={catTitle} />
                 <div className="category-overlay">
@@ -134,7 +136,7 @@ export default function HomePage({ setLang, setActiveTab, t }) {
                     {t.hub.viewCategory} <ArrowRight size={16} color="var(--accent-blue)" />
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
