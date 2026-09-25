@@ -120,12 +120,20 @@ export default function Header({ lang, setLang, t }) {
             }}
           >
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', opacity: lang === 'en' ? 1 : 0.55 }}>
-              <span style={{ fontSize: '1.05rem', lineHeight: 1 }}>🇬🇧</span>
+              <img 
+                src="/assets/flag_gb.svg" 
+                alt="English" 
+                style={{ width: '18px', height: '14px', borderRadius: '2px', objectFit: 'cover' }} 
+              />
               <span style={{ color: lang === 'en' ? 'var(--accent-blue)' : 'var(--text-muted)', fontWeight: 800 }}>EN</span>
             </span>
             <span style={{ color: 'var(--border-light)' }}>|</span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', opacity: lang === 'pt' ? 1 : 0.55 }}>
-              <span style={{ fontSize: '1.05rem', lineHeight: 1 }}>🇵🇹</span>
+              <img 
+                src="/assets/flag_pt.svg" 
+                alt="Português" 
+                style={{ width: '18px', height: '14px', borderRadius: '2px', objectFit: 'cover' }} 
+              />
               <span style={{ color: lang === 'pt' ? 'var(--accent-blue)' : 'var(--text-muted)', fontWeight: 800 }}>PT</span>
             </span>
           </button>
