@@ -98,8 +98,8 @@ export default function Header({ lang, setLang, t }) {
           </Link>
         </nav>
 
-        {/* Right Actions: Language Switcher & Book CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        {/* Right Actions: Language Switcher, Book CTA & Mobile Hamburger */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           {/* Language Toggle Pill */}
           <button
             onClick={toggleLang}
@@ -141,7 +141,7 @@ export default function Header({ lang, setLang, t }) {
           {/* Book Session CTA Button */}
           <Link
             to="/contact/"
-            className="btn-primary"
+            className="btn-primary header-cta-btn"
             style={{
               padding: '0.55rem 1.1rem',
               fontSize: '0.85rem',
@@ -156,10 +156,11 @@ export default function Header({ lang, setLang, t }) {
           {/* Mobile Hamburger Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{ color: 'var(--text-main)', display: 'none' }}
+            aria-label="Toggle Navigation Menu"
+            title="Menu"
             className="mobile-menu-btn"
           >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>

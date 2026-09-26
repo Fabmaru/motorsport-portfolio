@@ -239,6 +239,49 @@ button {
   transform: scale(1.03);
 }
 
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  margin-left: 0.35rem;
+}
+
+.mobile-menu-btn:hover,
+.mobile-menu-btn:active {
+  background: rgba(0, 102, 255, 0.25);
+  border-color: var(--accent-blue);
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
+  .logo-img { height: 48px; }
+  .nav-container { padding: 0.6rem 1rem; }
+  .header-cta-btn {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-cta-btn {
+    display: none !important;
+  }
+}
+
 /* STRICT EQUAL HEIGHT CATEGORY CARDS */
 .category-card {
   position: relative;

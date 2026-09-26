@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, ShieldCheck } from 'lucide-react';
+import { Camera } from 'lucide-react';
 import { useDocumentMeta } from '../utils/seo';
 
 export default function AboutPage({ lang, t }) {
@@ -52,7 +52,10 @@ export default function AboutPage({ lang, t }) {
         <div className="glass-card" style={{ padding: '1rem', position: 'relative', overflow: 'hidden' }}>
           <img
             src="/assets/photographer_portrait.jpg"
-            alt="Fabmaru Photo Photographer"
+            alt="Fábio Martins Photographer"
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            onDragStart={(e) => e.preventDefault()}
             style={{
               width: '100%',
               borderRadius: 'var(--radius-sm)',
@@ -62,22 +65,46 @@ export default function AboutPage({ lang, t }) {
           />
           <div style={{
             position: 'absolute',
-            bottom: '2rem',
-            left: '2rem',
-            right: '2rem',
-            background: 'rgba(8, 10, 16, 0.88)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid var(--border-light)',
-            borderRadius: 'var(--radius-sm)',
-            padding: '1rem',
+            bottom: '1.75rem',
+            left: '1.75rem',
+            right: '1.75rem',
+            background: 'rgba(8, 10, 16, 0.82)',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
+            border: '1px solid rgba(0, 102, 255, 0.35)',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 102, 255, 0.15)',
+            borderRadius: 'var(--radius-md)',
+            padding: '1rem 1.25rem',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.75rem'
+            gap: '0.85rem'
           }}>
-            <ShieldCheck size={26} color="var(--accent-blue)" />
+            <div style={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              background: 'rgba(0, 102, 255, 0.15)',
+              border: '1px solid rgba(0, 102, 255, 0.5)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0
+            }}>
+              <Camera size={20} color="var(--accent-blue)" />
+            </div>
             <div>
-              <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#FFFFFF' }}>
-                FABMARU PHOTO
+              <div style={{
+                fontWeight: 800,
+                fontSize: '1.05rem',
+                color: '#FFFFFF',
+                letterSpacing: '0.02em',
+                fontFamily: 'var(--font-heading)',
+                textTransform: 'uppercase'
+              }}>
+                Fábio Martins
+              </div>
+              <div style={{ fontSize: '0.78rem', color: 'var(--accent-blue)', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                Fabmaru Photo
               </div>
             </div>
           </div>
