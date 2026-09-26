@@ -10,8 +10,8 @@ export const translations = {
     },
     hero: {
       tagline: "FABMARU PHOTO • MOTORSPORT & AUTOMOTIVE",
-      title: "CAPTURING SPEED, PASSION & PRECISION",
-      subtitle: "Motorsport & Event Photographer from Porto, Portugal. Based in the Porto and Braga region of Portugal, available for racing, sports, events, portraits, and commercial photography worldwide.",
+      title: "Motorsport, Sports & Event Photographer from Porto",
+      subtitle: "Based in the North of Portugal, available for racing, sports, events, portraits, and commercial photography worldwide.",
       btnEnglish: "View Portfolio",
       btnPortuguese: "Ver Portfólio",
       exploreBadge: "Explore Photography Collections"
@@ -60,7 +60,7 @@ export const translations = {
       bioP1: "I’ve been connected to motorsport for as long as I can remember. Some of my earliest memories are watching Formula 1 at three years old, not fully understanding it yet, but already drawn to the speed, the sound, and the atmosphere. As I grew up, that connection deepened through WRC and endurance racing, with Le Mans becoming a defining reference point for me.",
       bioP2: "Before picking up a camera, I was already thinking in images. I spent years taking photos in video games, exploring angles, motion, and composition without realizing I was building the foundations of photography. That changed in 2024, at Le Mans. It was the first time I used a camera, and everything clicked. The intensity, the unpredictability, the constant movement, it felt natural to capture it. Since then, photography has become a daily pursuit.",
       bioP3: "Motorsport is at the core of my work, but it also shapes how I approach everything else. Whether I’m shooting sports, automotive projects, or events, I’m always looking for the same elements, action, timing, and atmosphere. The influence of racing carries through in the way I frame motion, anticipate moments, and tell stories through images.",
-      bioP4: "Based in Porto, Portugal, I work across motorsport, sports, automotive, and events, both locally and internationally.",
+      bioP4: "Based in the North of Portugal, I work across motorsport, sports, automotive, and events, both locally and internationally.",
       stats: {
         years: "Years Trackside",
         races: "Race Meetings Covered",
@@ -99,7 +99,7 @@ export const translations = {
         }
       },
       details: {
-        location: "Porto & Braga Region, Portugal (Available Worldwide)",
+        location: "North of Portugal (Available Worldwide)",
         email: "fabio@fabmaruphoto.com",
         phone: "+351 912 345 678",
         instagram: "@fabmaruphoto",
@@ -124,8 +124,8 @@ export const translations = {
     },
     hero: {
       tagline: "FABMARU PHOTO • DESPORTO MOTORIZADO E AUTOMÓVEL",
-      title: "CAPTAR A VELOCIDADE, PAIXÃO E PRECISÃO",
-      subtitle: "Fotógrafo de Desporto Motorizado e Eventos do Porto, Portugal. Sediado na região do Porto e Braga, disponível para fotografia de corridas, desporto, eventos, retratos e comercial em todo o mundo.",
+      title: "Fotógrafo do Porto, focado em desporto motorizado, desporto e eventos",
+      subtitle: "Com base no Norte de Portugal, estou disponível para corridas, desporto, eventos, retratos e fotografia comercial em todo o mundo.",
       btnEnglish: "View Portfolio",
       btnPortuguese: "Ver Portfólio",
       exploreBadge: "Explorar Coleções Fotográficas"
@@ -173,7 +173,7 @@ export const translations = {
       bioP1: "Estou ligado ao desporto motorizado desde que me lembro. Algumas das minhas primeiras memórias são de ver Fórmula 1 aos três anos, já fascinado pela velocidade, pelo som e pela atmosfera. À medida que fui crescendo, essa ligação foi-se aprofundando através do WRC e das corridas de resistência, com Le Mans a tornar-se uma referência marcante para mim.",
       bioP2: "Antes de pegar numa câmara, eu já pensava em fotos. Passei anos a tirar fotografias em jogos, a explorar ângulos, movimento e composição, sem perceber que estava a construir as bases da fotografia. Isso mudou em 2024, em Le Mans. Foi a primeira vez que usei uma câmara, e tudo fez sentido. A intensidade, a imprevisibilidade, o movimento constante. Desde então, a fotografia tornou-se uma presença constante.",
       bioP3: "O desporto motorizado está no centro do meu trabalho, mas também influencia a forma como abordo tudo o resto. Seja a fotografar desporto, projetos automóveis ou eventos, procuro sempre os mesmos elementos ação, timing e atmosfera. A influência das corridas reflete-se na forma como enquadro o movimento, antecipo momentos e conto histórias através das imagens.",
-      bioP4: "Com base no Porto, Portugal, trabalho nas áreas do desporto motorizado, desporto, automóvel e eventos, tanto a nível nacional como internacional.",
+      bioP4: "Com base no Norte de Portugal, trabalho nas áreas do desporto motorizado, desporto, automóvel e eventos, tanto a nível nacional como internacional.",
       stats: {
         years: "Anos em Pista",
         races: "Eventos Cobertos",
@@ -212,7 +212,7 @@ export const translations = {
         }
       },
       details: {
-        location: "Região do Porto e Braga, Portugal (Disponibilidade Mundial)",
+        location: "Norte de Portugal (Disponibilidade Mundial)",
         email: "fabio@fabmaruphoto.com",
         phone: "+351 912 345 678",
         instagram: "@fabmaruphoto",

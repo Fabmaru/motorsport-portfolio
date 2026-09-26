@@ -180,7 +180,7 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
       }}>
         {filteredItems.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '5rem 0', color: 'var(--text-muted)' }}>
-            No photos found in this section.
+            {lang === 'pt' ? 'Nenhuma foto encontrada nesta secção.' : 'No photos found in this section.'}
           </div>
         ) : (
           <div style={{

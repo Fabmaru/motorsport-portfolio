@@ -81,7 +81,7 @@ export default function ContactPage({ lang, t }) {
           marginBottom: '1rem'
         }}>
           <Mail size={14} />
-          BOOKINGS & ACCREDITATION
+          {lang === 'pt' ? 'RESERVAS E ACREDITAÇÕES' : 'BOOKINGS & ACCREDITATION'}
         </div>
 
         <h1 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', textTransform: 'uppercase', marginBottom: '1rem' }}>
@@ -123,7 +123,7 @@ export default function ContactPage({ lang, t }) {
                 <CheckCircle size={36} />
               </div>
               <h3 style={{ fontSize: '1.6rem', marginBottom: '0.75rem', color: '#FFFFFF' }}>
-                {t.contact.form.send} Success!
+                {lang === 'pt' ? 'Mensagem Enviada!' : 'Message Sent Successfully!'}
               </h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.6, maxWidth: '420px', margin: '0 auto 2rem auto' }}>
                 {t.contact.form.success}
@@ -136,7 +136,7 @@ export default function ContactPage({ lang, t }) {
                 className="btn-secondary"
                 style={{ padding: '0.6rem 1.5rem', fontSize: '0.85rem' }}
               >
-                Send Another Message
+                {lang === 'pt' ? 'Enviar Outra Mensagem' : 'Send Another Message'}
               </button>
             </div>
           ) : (
@@ -309,7 +309,7 @@ export default function ContactPage({ lang, t }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           <div className="glass-card" style={{ padding: '2rem' }}>
             <h3 style={{ fontSize: '1.25rem', marginBottom: '1.5rem', color: '#FFFFFF' }}>
-              DIRECT CONTACT INFO
+              {lang === 'pt' ? 'INFORMACÃO DE CONTACTO DIRETO' : 'DIRECT CONTACT INFO'}
             </h3>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -327,7 +327,9 @@ export default function ContactPage({ lang, t }) {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>Location</div>
+                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600 }}>
+                    {lang === 'pt' ? 'Localização' : 'Location'}
+                  </div>
                   <div style={{ color: '#FFFFFF', fontWeight: 600 }}>{t.contact.details.location}</div>
                 </div>
               </div>

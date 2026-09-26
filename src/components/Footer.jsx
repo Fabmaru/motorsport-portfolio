@@ -30,7 +30,7 @@ export default function Footer({ t }) {
             {/* Follow Me Section */}
             <div style={{ marginBottom: '1.5rem' }}>
               <div style={{ color: 'var(--text-main)', fontWeight: 700, fontSize: '0.95rem', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                Follow me
+                {t.footer.followMe}
               </div>
               <div style={{ display: 'flex', gap: '0.85rem', alignItems: 'center' }}>
                 <a 
@@ -86,7 +86,7 @@ export default function Footer({ t }) {
               {t.nav.contact}
             </h4>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '0.5rem' }}>
-              Porto & Braga Region, Portugal (Worldwide)
+              {t.contact.details.location}
             </p>
             <p style={{ color: 'var(--accent-blue)', fontWeight: 600, fontSize: '0.95rem', marginBottom: '1rem' }}>
               fabio@fabmaruphoto.com

@@ -11,8 +11,8 @@ export default function HomePage({ lang, t }) {
     : 'Fábio Martins | Motorsport, Sports & Event Photographer from Porto';
     
   const pageDescription = lang === 'pt'
-    ? 'Portfólio oficial de fotografia de desporto motorizado, desporto, eventos e automóveis por Fábio Martins, baseado no Porto e Braga, Portugal.'
-    : 'Official motorsport, sports, events, and automotive photography portfolio by Fábio Martins, based in the Porto and Braga region of Portugal.';
+    ? 'Portfólio oficial de fotografia de desporto motorizado, desporto, eventos e automóveis por Fábio Martins, baseado no Norte de Portugal.'
+    : 'Official motorsport, sports, events, and automotive photography portfolio by Fábio Martins, based in the North of Portugal.';
 
   useDocumentMeta(pageTitle, pageDescription);
 
@@ -61,7 +61,7 @@ export default function HomePage({ lang, t }) {
             textTransform: 'uppercase',
             textShadow: '0 10px 30px rgba(0,0,0,0.8)'
           }}>
-            Motorsport, Sports & Event Photographer from Porto
+            {t.hero.title}
           </h1>
 
           {/* Subtitle */}
@@ -73,7 +73,7 @@ export default function HomePage({ lang, t }) {
             lineHeight: 1.6,
             fontWeight: 400
           }}>
-            Based in the Porto and Braga region of Portugal, available for racing, sports, events, portraits, and commercial photography worldwide.
+            {t.hero.subtitle}
           </p>
         </div>
       </section>
