@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, LayoutGrid, Flag } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Flag } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { getCategoryUrl, getMotorsportDisciplineUrl } from '../utils/routes';
 import { useDocumentMeta } from '../utils/seo';
@@ -107,17 +107,17 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
         </div>
       </section>
 
-      {/* Control Bar: Discipline Filters & Photo Counter */}
-      <section style={{
-        maxWidth: '1320px',
-        margin: '0 auto',
-        padding: '2rem 1.5rem 1rem 1.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1.25rem'
-      }}>
-        {/* Motorsport Disciplines Sub-nav */}
-        {isMotorsport && (
+      {/* Control Bar: Discipline Filters */}
+      {isMotorsport && (
+        <section style={{
+          maxWidth: '1320px',
+          margin: '0 auto',
+          padding: '2rem 1.5rem 0rem 1.5rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1.25rem'
+        }}>
+          {/* Motorsport Disciplines Sub-nav */}
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.6rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--accent-blue)', fontWeight: 700, fontSize: '0.85rem', marginRight: '0.5rem' }}>
               <Flag size={16} />
@@ -169,32 +169,8 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
               );
             })}
           </div>
-        )}
-
-        {/* Grid Indicator Bar */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          gap: '1.5rem'
-        }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.4rem',
-            background: 'rgba(0, 102, 255, 0.12)',
-            border: '1px solid rgba(0, 102, 255, 0.4)',
-            padding: '0.4rem 0.85rem',
-            borderRadius: 'var(--radius-sm)',
-            color: 'var(--accent-blue)',
-            fontSize: '0.82rem',
-            fontWeight: 700
-          }}>
-            <LayoutGrid size={16} />
-            <span>{t.gallery.grid3x3} ({filteredItems.length} {t.hub.photosCount})</span>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Grid of Photos */}
       <section style={{

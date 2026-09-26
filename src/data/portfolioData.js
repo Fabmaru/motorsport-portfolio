@@ -1,43 +1,51 @@
-export const portfolioData = {
-  categories: [
-    {
-      id: "motorsport",
-      titleEn: "Motorsport Photography",
-      titlePt: "Fotografia de Desporto Motorizado",
-      bannerImage: "/assets/cat_motorsport.jpg",
-      count: 45,
-      disciplines: [
-        { id: "circuit", titleEn: "Circuit", titlePt: "Velocidade" },
-        { id: "rally", titleEn: "Rally", titlePt: "Rali" },
-        { id: "rallycross", titleEn: "Rallycross", titlePt: "Rallycross" },
-        { id: "karting", titleEn: "Karting", titlePt: "Karting" },
-        { id: "hillclimb", titleEn: "Hillclimb", titlePt: "Rampa" }
-      ]
-    },
-    {
-      id: "sports",
-      titleEn: "Sports Photography",
-      titlePt: "Fotografia de Desporto",
-      bannerImage: "/assets/cat_sports.jpg",
-      count: 9
-    },
-    {
-      id: "automotive",
-      titleEn: "Automotive Photography",
-      titlePt: "Fotografia Automóvel",
-      bannerImage: "/assets/cat_automotive.jpg",
-      count: 9
-    },
-    {
-      id: "artistic_events",
-      titleEn: "Artistic & Events Photography",
-      titlePt: "Fotografia Artística e Eventos",
-      bannerImage: "/assets/cat_artistic_events.jpg",
-      count: 9
-    }
-  ],
+function shuffleArray(arr) {
+  const array = [...arr];
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
-  items: [
+const categories = [
+  {
+    id: "motorsport",
+    titleEn: "Motorsport Photography",
+    titlePt: "Fotografia de Desporto Motorizado",
+    bannerImage: "/assets/cat_motorsport.jpg",
+    count: 45,
+    disciplines: [
+      { id: "circuit", titleEn: "Circuit", titlePt: "Velocidade" },
+      { id: "rally", titleEn: "Rally", titlePt: "Rali" },
+      { id: "rallycross", titleEn: "Rallycross", titlePt: "Rallycross" },
+      { id: "karting", titleEn: "Karting", titlePt: "Karting" },
+      { id: "hillclimb", titleEn: "Hillclimb", titlePt: "Rampa" }
+    ]
+  },
+  {
+    id: "sports",
+    titleEn: "Sports Photography",
+    titlePt: "Fotografia de Desporto",
+    bannerImage: "/assets/cat_sports.jpg",
+    count: 9
+  },
+  {
+    id: "automotive",
+    titleEn: "Automotive Photography",
+    titlePt: "Fotografia Automóvel",
+    bannerImage: "/assets/cat_automotive.jpg",
+    count: 9
+  },
+  {
+    id: "artistic_events",
+    titleEn: "Artistic & Events Photography",
+    titlePt: "Fotografia Artística e Eventos",
+    bannerImage: "/assets/cat_artistic_events.jpg",
+    count: 9
+  }
+];
+
+const rawItems = [
     /* MOTORSPORT DISCIPLINES (45 PHOTOS ACROSS 5 GALLERIES) */
     // 1. CIRCUIT (VELOCIDADE)
     { id: "ms-circuit-1", category: "motorsport", subCategory: "circuit", titleEn: "Vila Real Circuit Track Action", titlePt: "Ação em Pista em Vila Real", location: "Circuito Internacional de Vila Real", date: "2025-07-12", image: "/assets/gallery/motorsport/circuit/Vila_Real_11-113.jpg", tags: ["Vila Real", "Street Circuit", "Circuit"], exif: { camera: "Fabmaru Photo Original", location: "Vila Real, Portugal" } },
@@ -396,5 +404,12 @@ export const portfolioData = {
       tags: ["London", "Culture", "Night Event"],
       exif: { camera: "Fabmaru Photo Original", location: "London, UK", date: "2025-10-06" }
     }
-  ]
+  ];
+
+export const portfolioData = {
+  categories,
+  items: shuffleArray(rawItems)
 };
+
+
+
