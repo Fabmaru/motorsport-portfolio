@@ -1,22 +1,36 @@
 import { useEffect } from 'react';
 
 const DEFAULT_OG_IMAGE = 'https://fabmaruphoto.com/assets/logo_main.png';
-const SITE_NAME = 'Fabmaru Photo';
 
 function setMetaTag(attributeName, attributeValue, content) {
-  let element = document.querySelector(`meta[${attributeName}="${attributeValue}"]`);
-  if (!element) {
-    element = document.createElement('meta');
-    element.setAttribute(attributeName, attributeValue);
-    document.head.appendChild(element);
+  if (typeof document === 'undefined') return;
+  try {
+    let element = document.querySelector(`meta[${attributeName}="${attributeValue}"]`);
+    if (!element) {
+      element = document.createElement('meta');
+      element.setAttribute(attributeName, attributeValue);
+      document.head.appendChild(element);
+    }
+    element.setAttribute('content', content || '');
+  } catch (e) {
+    // Fallback if querySelector fails for any reason
+    let metas = Array.from(document.querySelectorAll('meta'));
+    let element = metas.find(m => m.getAttribute(attributeName) === attributeValue);
+    if (!element) {
+      element = document.createElement('meta');
+      element.setAttribute(attributeName, attributeValue);
+      document.head.appendChild(element);
+    }
+    element.setAttribute('content', content || '');
   }
-  element.setAttribute('content', content);
 }
 
 export function setPageMeta(title, description, customOgImage) {
+  if (typeof document === 'undefined') return;
+
   if (title) {
     document.title = title;
-    setMetaTag('og:title', 'og:title', title);
+    setMetaTag('property', 'og:title', title);
     setMetaTag('name', 'twitter:title', title);
   }
 
@@ -31,15 +45,19 @@ export function setPageMeta(title, description, customOgImage) {
   setMetaTag('name', 'twitter:image', ogImage);
 
   // Canonical tag
-  let canonicalLink = document.querySelector('link[rel="canonical"]');
-  if (!canonicalLink) {
-    canonicalLink = document.createElement('link');
-    canonicalLink.setAttribute('rel', 'canonical');
-    document.head.appendChild(canonicalLink);
+  try {
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    const canonicalUrl = `https://fabmaruphoto.com${window.location.pathname}`;
+    canonicalLink.setAttribute('href', canonicalUrl);
+    setMetaTag('property', 'og:url', canonicalUrl);
+  } catch (e) {
+    console.error('Error setting canonical URL:', e);
   }
-  const canonicalUrl = `https://fabmaruphoto.com${window.location.pathname}`;
-  canonicalLink.setAttribute('href', canonicalUrl);
-  setMetaTag('property', 'og:url', canonicalUrl);
 }
 
 export function useDocumentMeta(title, description, customOgImage) {
@@ -47,4 +65,5 @@ export function useDocumentMeta(title, description, customOgImage) {
     setPageMeta(title, description, customOgImage);
   }, [title, description, customOgImage]);
 }
+
 
