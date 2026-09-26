@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Flag } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
@@ -30,9 +30,6 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
 
   useDocumentMeta(seoTitle, seoDesc);
 
-  // Filter category items
-  const categoryItems = portfolioData.items.filter(item => item.category === categoryId);
-
   // If this is Motorsport, define the 5 sub-categories
   const isMotorsport = categoryId === 'motorsport';
   const disciplines = categoryMeta.disciplines || [
@@ -43,9 +40,20 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
     { id: 'hillclimb', titleEn: 'Hillclimb', titlePt: 'Rampa' }
   ];
 
-  const filteredItems = categoryItems.filter(item => {
-    return selectedDiscipline === 'ALL' || item.subCategory === selectedDiscipline;
-  });
+  // Filter and randomize category items
+  const filteredItems = useMemo(() => {
+    const items = portfolioData.items.filter(item => {
+      if (item.category !== categoryId) return false;
+      return selectedDiscipline === 'ALL' || item.subCategory === selectedDiscipline;
+    });
+
+    const shuffled = [...items];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }, [categoryId, selectedDiscipline]);
 
   return (
     <div>
