@@ -93,7 +93,9 @@ export const translations = {
           motorsport: "Motorsport / Race Team Coverage",
           automotive: "Automotive Commercial / Collector Shoot",
           sports: "Sports & Endurance Event",
-          artistic_events: "Artistic & Events Coverage"
+          artistic_events: "Artistic & Events Coverage",
+          portraits: "Portraits & Personal Shoots",
+          others: "Others / Custom Enquiry"
         }
       },
       details: {
@@ -204,7 +206,9 @@ export const translations = {
           motorsport: "Desporto Motorizado / Cobertura de Equipa",
           automotive: "Comercial Automóvel / Colecionadores",
           sports: "Desporto & Provas de Resistência",
-          artistic_events: "Fotografia Artística e Eventos"
+          artistic_events: "Fotografia Artística e Eventos",
+          portraits: "Retratos e Sessões Pessoais",
+          others: "Outros / Consulta Personalizada"
         }
       },
       details: {

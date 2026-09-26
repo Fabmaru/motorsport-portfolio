@@ -220,6 +220,8 @@ export default function ContactPage({ lang, t }) {
                     <option value="automotive">{t.contact.form.categories.automotive}</option>
                     <option value="sports">{t.contact.form.categories.sports}</option>
                     <option value="artistic_events">{t.contact.form.categories.artistic_events}</option>
+                    <option value="portraits">{t.contact.form.categories.portraits}</option>
+                    <option value="others">{t.contact.form.categories.others}</option>
                   </select>
                 </div>
 
