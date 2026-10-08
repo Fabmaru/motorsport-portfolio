@@ -126,7 +126,7 @@ const categories = [
     titleEn: "Motorsport Photography",
     titlePt: "Fotografia de Desporto Motorizado",
     bannerImage: "/assets/cat_motorsport.jpg",
-    count: 45,
+    count: 48,
     disciplines: [
       { id: "circuit", titleEn: "Circuit", titlePt: "Velocidade" },
       { id: "rally", titleEn: "Rally", titlePt: "Rali" },
@@ -191,6 +191,9 @@ const rawItemsData = [
   { id: "ms-rx-7", category: "motorsport", subCategory: "rallycross", titleEn: "Side-by-Side Gravel Attack", titlePt: "Lado a Lado em Terra", location: "Euro RX Stage", date: "2025-03-29", image: "/assets/gallery/motorsport/rallycross/FAB_3021-1.jpg", tags: ["Side by Side", "Gravel", "Rallycross"] },
   { id: "ms-rx-8", category: "motorsport", subCategory: "rallycross", titleEn: "Final Corner Victory Sprint", titlePt: "Sprint de Vitória na Última Curva", location: "RX Final", date: "2025-06-27", image: "/assets/gallery/motorsport/rallycross/FAB_3221.jpg", tags: ["Final", "Sprint", "Rallycross"] },
   { id: "ms-rx-9", category: "motorsport", subCategory: "rallycross", titleEn: "Paddock Celebration Moment", titlePt: "Celebração no Paddock", location: "Montalegre Paddock", date: "2025-04-27", image: "/assets/gallery/motorsport/rallycross/FAB_6240-1.jpg", tags: ["Paddock", "Podium", "Rallycross"] },
+  { id: "ms-rx-10", category: "motorsport", subCategory: "rallycross", titleEn: "Lousada RX Panning Speed Action", titlePt: "Panning de Alta Velocidade em Lousada", location: "Pista de Costilha, Lousada", date: "2026-10-04", image: "/assets/gallery/motorsport/rallycross/CPRx_Lousada_03-27.jpg", tags: ["Lousada", "Panning", "Rallycross"] },
+  { id: "ms-rx-11", category: "motorsport", subCategory: "rallycross", titleEn: "Euro CPRx Lousada Apex Attack", titlePt: "Ataque à Curva no CPRx Lousada", location: "Euro RX Lousada Circuit", date: "2026-10-04", image: "/assets/gallery/motorsport/rallycross/CPRx_Lousada_03-4.jpg", tags: ["Lousada", "CPRx", "Rallycross"] },
+  { id: "ms-rx-12", category: "motorsport", subCategory: "rallycross", titleEn: "Lousada Rallycross Supercar Battle", titlePt: "Disputa de Supercars no Rallycross de Lousada", location: "Pista de Costilha, Lousada", date: "2026-10-04", image: "/assets/gallery/motorsport/rallycross/CPRx_Lousada_04-16.jpg", tags: ["Lousada", "Supercars", "Rallycross"] },
 
   // KARTING
   { id: "ms-karting-1", category: "motorsport", subCategory: "karting", titleEn: "National Karting Championship Apex", titlePt: "Campeonato Nacional de Karting", location: "Kartódromo do Porto / Braga", date: "2026-03-01", image: "/assets/gallery/motorsport/karting/20260301-FAB_3720.jpg", tags: ["Karting", "Championship", "Apex"] },

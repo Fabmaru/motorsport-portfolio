@@ -13,7 +13,7 @@ export const categories = [
     "titleEn": "Motorsport Photography",
     "titlePt": "Fotografia de Desporto Motorizado",
     "bannerImage": "/assets/cat_motorsport.jpg",
-    "count": 45,
+    "count": 48,
     "disciplines": [
       {
         "id": "circuit",
@@ -676,6 +676,75 @@ export const rawItems = [
       "lens": "17.0-50.0 mm f/2.8",
       "focalLength": "22mm",
       "exposure": "1/5000",
+      "aperture": "f/2.8",
+      "iso": "ISO 100"
+    }
+  },
+  {
+    "id": "ms-rx-10",
+    "category": "motorsport",
+    "subCategory": "rallycross",
+    "titleEn": "Lousada RX Panning Speed Action",
+    "titlePt": "Panning de Alta Velocidade em Lousada",
+    "location": "Pista de Costilha, Lousada",
+    "date": "2026-10-04",
+    "image": "/assets/gallery/motorsport/rallycross/CPRx_Lousada_03-27.jpg",
+    "tags": [
+      "Lousada",
+      "Panning",
+      "Rallycross"
+    ],
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "VR 70-200mm f/2.8E",
+      "focalLength": "120mm",
+      "exposure": "1/20",
+      "aperture": "f/14.0",
+      "iso": "ISO 50"
+    }
+  },
+  {
+    "id": "ms-rx-11",
+    "category": "motorsport",
+    "subCategory": "rallycross",
+    "titleEn": "Euro CPRx Lousada Apex Attack",
+    "titlePt": "Ataque à Curva no CPRx Lousada",
+    "location": "Euro RX Lousada Circuit",
+    "date": "2026-10-04",
+    "image": "/assets/gallery/motorsport/rallycross/CPRx_Lousada_03-4.jpg",
+    "tags": [
+      "Lousada",
+      "CPRx",
+      "Rallycross"
+    ],
+    "exif": {
+      "camera": "Nikon Z6",
+      "lens": "TAMRON 28-75mm F/2.8 Di III VXD G2 A063Z",
+      "focalLength": "75mm",
+      "exposure": "1/6400",
+      "aperture": "f/2.8",
+      "iso": "ISO 100"
+    }
+  },
+  {
+    "id": "ms-rx-12",
+    "category": "motorsport",
+    "subCategory": "rallycross",
+    "titleEn": "Lousada Rallycross Supercar Battle",
+    "titlePt": "Disputa de Supercars no Rallycross de Lousada",
+    "location": "Pista de Costilha, Lousada",
+    "date": "2026-10-04",
+    "image": "/assets/gallery/motorsport/rallycross/CPRx_Lousada_04-16.jpg",
+    "tags": [
+      "Lousada",
+      "Supercars",
+      "Rallycross"
+    ],
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "VR 70-200mm f/2.8E",
+      "focalLength": "155mm",
+      "exposure": "1/500",
       "aperture": "f/2.8",
       "iso": "ISO 100"
     }
