@@ -13,7 +13,7 @@ export const categories = [
     "titleEn": "Motorsport Photography",
     "titlePt": "Fotografia de Desporto Motorizado",
     "bannerImage": "/assets/cat_motorsport.jpg",
-    "count": 48,
+    "count": 51,
     "disciplines": [
       {
         "id": "circuit",
@@ -271,6 +271,78 @@ export const rawItems = [
       "exposure": "1/2500",
       "aperture": "f/2.8",
       "iso": "ISO 100"
+    }
+  },
+  {
+    "id": "ms-circuit-10",
+    "category": "motorsport",
+    "subCategory": "circuit",
+    "titleEn": "ELMS 4 Hours of Portimão Speed Panning",
+    "titlePt": "Panning de Alta Velocidade no ELMS em Portimão",
+    "location": "Autódromo Internacional do Algarve, Portimão",
+    "date": "2026-10-10",
+    "image": "/assets/gallery/motorsport/circuit/ELMS-70.jpg",
+    "tags": [
+      "ELMS",
+      "Portimão",
+      "Panning",
+      "Circuit"
+    ],
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "NIKKOR Z 180-600mm f/5.6-6.3 VR",
+      "focalLength": "450mm",
+      "exposure": "1/50",
+      "aperture": "f/14.0",
+      "iso": "ISO 64"
+    }
+  },
+  {
+    "id": "ms-circuit-11",
+    "category": "motorsport",
+    "subCategory": "circuit",
+    "titleEn": "European Le Mans Series Dusk Stint",
+    "titlePt": "Turno de Entardecer no European Le Mans Series",
+    "location": "Autódromo Internacional do Algarve, Portimão",
+    "date": "2026-10-10",
+    "image": "/assets/gallery/motorsport/circuit/ELMS-91.jpg",
+    "tags": [
+      "ELMS",
+      "Endurance",
+      "Portimão",
+      "Circuit"
+    ],
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "NIKKOR Z 180-600mm f/5.6-6.3 VR",
+      "focalLength": "230mm",
+      "exposure": "1/160",
+      "aperture": "f/6.3",
+      "iso": "ISO 200"
+    }
+  },
+  {
+    "id": "ms-circuit-12",
+    "category": "motorsport",
+    "subCategory": "circuit",
+    "titleEn": "Michelin Le Mans Cup Prototype Attack",
+    "titlePt": "Ataque de Protótipo na Michelin Le Mans Cup",
+    "location": "Autódromo Internacional do Algarve, Portimão",
+    "date": "2026-10-10",
+    "image": "/assets/gallery/motorsport/circuit/Le_Mans_Cup-6.jpg",
+    "tags": [
+      "Le Mans Cup",
+      "LMP3",
+      "Portimão",
+      "Circuit"
+    ],
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "NIKKOR Z 180-600mm f/5.6-6.3 VR",
+      "focalLength": "530mm",
+      "exposure": "1/80",
+      "aperture": "f/16.0",
+      "iso": "ISO 64"
     }
   },
   {

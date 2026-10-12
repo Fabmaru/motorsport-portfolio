@@ -126,7 +126,7 @@ const categories = [
     titleEn: "Motorsport Photography",
     titlePt: "Fotografia de Desporto Motorizado",
     bannerImage: "/assets/cat_motorsport.jpg",
-    count: 48,
+    count: 51,
     disciplines: [
       { id: "circuit", titleEn: "Circuit", titlePt: "Velocidade" },
       { id: "rally", titleEn: "Rally", titlePt: "Rali" },
@@ -169,6 +169,9 @@ const rawItemsData = [
   { id: "ms-circuit-7", category: "motorsport", subCategory: "circuit", titleEn: "Wheel-to-Wheel Battle", titlePt: "Disputa Roda a Roda", location: "Circuit Track", date: "2025-06-18", image: "/assets/gallery/motorsport/circuit/FAB_1236.jpg", tags: ["Battle", "Precision", "Circuit"] },
   { id: "ms-circuit-8", category: "motorsport", subCategory: "circuit", titleEn: "Sunset Circuit Stint", titlePt: "Turno ao Pôr do Sol", location: "International Circuit", date: "2025-06-20", image: "/assets/gallery/motorsport/circuit/FAB_1510.jpg", tags: ["Sunset", "Endurance", "Circuit"] },
   { id: "ms-circuit-9", category: "motorsport", subCategory: "circuit", titleEn: "Vila Real Street Circuit Victory", titlePt: "Vitória no Circuito de Vila Real", location: "Vila Real", date: "2025-07-12", image: "/assets/gallery/motorsport/circuit/Vila_Real_12-99.jpg", tags: ["Vila Real", "Victory", "Circuit"] },
+  { id: "ms-circuit-10", category: "motorsport", subCategory: "circuit", titleEn: "ELMS 4 Hours of Portimão Speed Panning", titlePt: "Panning de Alta Velocidade no ELMS em Portimão", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/ELMS-70.jpg", tags: ["ELMS", "Portimão", "Panning", "Circuit"] },
+  { id: "ms-circuit-11", category: "motorsport", subCategory: "circuit", titleEn: "European Le Mans Series Dusk Stint", titlePt: "Turno de Entardecer no European Le Mans Series", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/ELMS-91.jpg", tags: ["ELMS", "Endurance", "Portimão", "Circuit"] },
+  { id: "ms-circuit-12", category: "motorsport", subCategory: "circuit", titleEn: "Michelin Le Mans Cup Prototype Attack", titlePt: "Ataque de Protótipo na Michelin Le Mans Cup", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/Le_Mans_Cup-6.jpg", tags: ["Le Mans Cup", "LMP3", "Portimão", "Circuit"] },
 
   // RALLY
   { id: "ms-rally-1", category: "motorsport", subCategory: "rally", titleEn: "WRC Special Stage Attack", titlePt: "Ataque em Classificativa de Rali", location: "Rally Special Stage", date: "2025-05-18", image: "/assets/gallery/motorsport/rally/FAB_1236-1.jpg", tags: ["WRC", "Gravel", "Rally"] },
