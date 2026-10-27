@@ -126,7 +126,7 @@ const categories = [
     titleEn: "Motorsport Photography",
     titlePt: "Fotografia de Desporto Motorizado",
     bannerImage: "/assets/cat_motorsport.jpg",
-    count: 51,
+    count: 59,
     disciplines: [
       { id: "circuit", titleEn: "Circuit", titlePt: "Velocidade" },
       { id: "rally", titleEn: "Rally", titlePt: "Rali" },
@@ -172,6 +172,9 @@ const rawItemsData = [
   { id: "ms-circuit-10", category: "motorsport", subCategory: "circuit", titleEn: "ELMS 4 Hours of Portimão Speed Panning", titlePt: "Panning de Alta Velocidade no ELMS em Portimão", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/ELMS-70.jpg", tags: ["ELMS", "Portimão", "Panning", "Circuit"] },
   { id: "ms-circuit-11", category: "motorsport", subCategory: "circuit", titleEn: "European Le Mans Series Dusk Stint", titlePt: "Turno de Entardecer no European Le Mans Series", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/ELMS-91.jpg", tags: ["ELMS", "Endurance", "Portimão", "Circuit"] },
   { id: "ms-circuit-12", category: "motorsport", subCategory: "circuit", titleEn: "Michelin Le Mans Cup Prototype Attack", titlePt: "Ataque de Protótipo na Michelin Le Mans Cup", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/Le_Mans_Cup-6.jpg", tags: ["Le Mans Cup", "LMP3", "Portimão", "Circuit"] },
+  { id: "ms-circuit-13", category: "motorsport", subCategory: "circuit", titleEn: "International GT Open GT3 Night Sprint", titlePt: "Sprint Noturno GT3 no International GT Open", location: "Circuit Track", date: "2026-10-17", image: "/assets/gallery/motorsport/circuit/GT3-102.jpg", tags: ["GT3", "Night Race", "Circuit"] },
+  { id: "ms-circuit-14", category: "motorsport", subCategory: "circuit", titleEn: "GT3 Golden Hour Panning Attack", titlePt: "Panning de GT3 ao Pôr do Sol", location: "Circuit Track", date: "2026-10-17", image: "/assets/gallery/motorsport/circuit/GT3-51.jpg", tags: ["GT3", "Panning", "Sunset", "Circuit"] },
+  { id: "ms-circuit-15", category: "motorsport", subCategory: "circuit", titleEn: "ELMS LMP Prototype Curbside Speed", titlePt: "Velocidade de Protótipo LMP no Corretor ELMS", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/ELMS-7.jpg", tags: ["ELMS", "LMP", "Portimão", "Circuit"] },
 
   // RALLY
   { id: "ms-rally-1", category: "motorsport", subCategory: "rally", titleEn: "WRC Special Stage Attack", titlePt: "Ataque em Classificativa de Rali", location: "Rally Special Stage", date: "2025-05-18", image: "/assets/gallery/motorsport/rally/FAB_1236-1.jpg", tags: ["WRC", "Gravel", "Rally"] },
@@ -183,6 +186,9 @@ const rawItemsData = [
   { id: "ms-rally-7", category: "motorsport", subCategory: "rally", titleEn: "Service Park Preparation", titlePt: "Preparação no Parque de Assistência", location: "Rally Service Park", date: "2025-05-17", image: "/assets/gallery/motorsport/rally/FAB_7384-1.jpg", tags: ["Service Park", "Pitlane", "Rally"] },
   { id: "ms-rally-8", category: "motorsport", subCategory: "rally", titleEn: "Forest Stage Flat Out", titlePt: "A Fundo pela Floresta", location: "Forest Rally Stage", date: "2025-05-18", image: "/assets/gallery/motorsport/rally/FAB_7997-1.jpg", tags: ["Forest", "Speed", "Rally"] },
   { id: "ms-rally-9", category: "motorsport", subCategory: "rally", titleEn: "Spectator Zone Action", titlePt: "Ação na Zona de Espetáculos", location: "Rally Spectator Zone", date: "2025-05-19", image: "/assets/gallery/motorsport/rally/FAB_8133-1.jpg", tags: ["Fans", "Atmosphere", "Rally"] },
+  { id: "ms-rally-10", category: "motorsport", subCategory: "rally", titleEn: "ERC Rally Stage Drift", titlePt: "Derrapagem em Troço de Rali ERC", location: "ERC Rally Stage", date: "2026-10-24", image: "/assets/gallery/motorsport/rally/ERC_24-15.jpg", tags: ["ERC", "Rally", "Drift"] },
+  { id: "ms-rally-11", category: "motorsport", subCategory: "rally", titleEn: "ERC Championship Stage Attack", titlePt: "Ataque em Classificativa ERC", location: "ERC Rally Stage", date: "2026-10-25", image: "/assets/gallery/motorsport/rally/ERC_25-30.jpg", tags: ["ERC", "Rally", "Apex"] },
+  { id: "ms-rally-12", category: "motorsport", subCategory: "rally", titleEn: "ERC High-Speed Hairpin Cornering", titlePt: "Curva de Alta Velocidade no ERC", location: "ERC Rally Stage", date: "2026-10-25", image: "/assets/gallery/motorsport/rally/ERC_25-37.jpg", tags: ["ERC", "Rally", "Cornering"] },
 
   // RALLYCROSS
   { id: "ms-rx-1", category: "motorsport", subCategory: "rallycross", titleEn: "Montalegre RX World Championship", titlePt: "Mundial de Rallycross em Montalegre", location: "Pista Automóvel de Montalegre", date: "2025-07-26", image: "/assets/gallery/motorsport/rallycross/CPRx_Montalegre-14.jpg", tags: ["Montalegre", "World RX", "Rallycross"] },
@@ -197,6 +203,8 @@ const rawItemsData = [
   { id: "ms-rx-10", category: "motorsport", subCategory: "rallycross", titleEn: "Lousada RX Panning Speed Action", titlePt: "Panning de Alta Velocidade em Lousada", location: "Pista de Costilha, Lousada", date: "2026-10-04", image: "/assets/gallery/motorsport/rallycross/CPRx_Lousada_03-27.jpg", tags: ["Lousada", "Panning", "Rallycross"] },
   { id: "ms-rx-11", category: "motorsport", subCategory: "rallycross", titleEn: "Euro CPRx Lousada Apex Attack", titlePt: "Ataque à Curva no CPRx Lousada", location: "Euro RX Lousada Circuit", date: "2026-10-04", image: "/assets/gallery/motorsport/rallycross/CPRx_Lousada_03-4.jpg", tags: ["Lousada", "CPRx", "Rallycross"] },
   { id: "ms-rx-12", category: "motorsport", subCategory: "rallycross", titleEn: "Lousada Rallycross Supercar Battle", titlePt: "Disputa de Supercars no Rallycross de Lousada", location: "Pista de Costilha, Lousada", date: "2026-10-04", image: "/assets/gallery/motorsport/rallycross/CPRx_Lousada_04-16.jpg", tags: ["Lousada", "Supercars", "Rallycross"] },
+  { id: "ms-rx-13", category: "motorsport", subCategory: "rallycross", titleEn: "RallyX Championship Dust Battle", titlePt: "Disputa no Campeonato RallyX entre Poeira", location: "Rallycross Circuit", date: "2026-10-24", image: "/assets/gallery/motorsport/rallycross/RallyX-11.jpg", tags: ["RallyX", "Supercars", "Rallycross"] },
+  { id: "ms-rx-14", category: "motorsport", subCategory: "rallycross", titleEn: "RallyX Dusk Apex Push", titlePt: "Ataque à Curva no RallyX ao Entardecer", location: "Rallycross Circuit", date: "2026-10-24", image: "/assets/gallery/motorsport/rallycross/RallyX-25.jpg", tags: ["RallyX", "Dusk", "Rallycross"] },
 
   // KARTING
   { id: "ms-karting-1", category: "motorsport", subCategory: "karting", titleEn: "National Karting Championship Apex", titlePt: "Campeonato Nacional de Karting", location: "Kartódromo do Porto / Braga", date: "2026-03-01", image: "/assets/gallery/motorsport/karting/20260301-FAB_3720.jpg", tags: ["Karting", "Championship", "Apex"] },

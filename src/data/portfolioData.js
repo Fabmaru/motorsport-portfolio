@@ -13,7 +13,7 @@ export const categories = [
     "titleEn": "Motorsport Photography",
     "titlePt": "Fotografia de Desporto Motorizado",
     "bannerImage": "/assets/cat_motorsport.jpg",
-    "count": 51,
+    "count": 59,
     "disciplines": [
       {
         "id": "circuit",
@@ -346,6 +346,77 @@ export const rawItems = [
     }
   },
   {
+    "id": "ms-circuit-13",
+    "category": "motorsport",
+    "subCategory": "circuit",
+    "titleEn": "International GT Open GT3 Night Sprint",
+    "titlePt": "Sprint Noturno GT3 no International GT Open",
+    "location": "Circuit Track",
+    "date": "2026-10-17",
+    "image": "/assets/gallery/motorsport/circuit/GT3-102.jpg",
+    "tags": [
+      "GT3",
+      "Night Race",
+      "Circuit"
+    ],
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "NIKKOR Z 180-600mm f/5.6-6.3 VR",
+      "focalLength": "180mm",
+      "exposure": "1/100",
+      "aperture": "f/6.3",
+      "iso": "ISO 12800"
+    }
+  },
+  {
+    "id": "ms-circuit-14",
+    "category": "motorsport",
+    "subCategory": "circuit",
+    "titleEn": "GT3 Golden Hour Panning Attack",
+    "titlePt": "Panning de GT3 ao Pôr do Sol",
+    "location": "Circuit Track",
+    "date": "2026-10-17",
+    "image": "/assets/gallery/motorsport/circuit/GT3-51.jpg",
+    "tags": [
+      "GT3",
+      "Panning",
+      "Sunset",
+      "Circuit"
+    ],
+    "exif": {
+      "camera": "Nikon Z6",
+      "lens": "TAMRON 28-75mm F/2.8 Di III VXD G2 A063Z",
+      "focalLength": "75mm",
+      "exposure": "1/20",
+      "aperture": "f/18.0",
+      "iso": "ISO 64"
+    }
+  },
+  {
+    "id": "ms-circuit-15",
+    "category": "motorsport",
+    "subCategory": "circuit",
+    "titleEn": "ELMS LMP Prototype Curbside Speed",
+    "titlePt": "Velocidade de Protótipo LMP no Corretor ELMS",
+    "location": "Autódromo Internacional do Algarve, Portimão",
+    "date": "2026-10-10",
+    "image": "/assets/gallery/motorsport/circuit/ELMS-7.jpg",
+    "tags": [
+      "ELMS",
+      "LMP",
+      "Portimão",
+      "Circuit"
+    ],
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "NIKKOR Z 180-600mm f/5.6-6.3 VR",
+      "focalLength": "240mm",
+      "exposure": "1/1250",
+      "aperture": "f/6.3",
+      "iso": "ISO 800"
+    }
+  },
+  {
     "id": "ms-rally-1",
     "category": "motorsport",
     "subCategory": "rally",
@@ -548,6 +619,75 @@ export const rawItems = [
       "lens": "VR 70-200mm f/2.8E",
       "focalLength": "105mm",
       "exposure": "1/2500",
+      "aperture": "f/2.8",
+      "iso": "ISO 100"
+    }
+  },
+  {
+    "id": "ms-rally-10",
+    "category": "motorsport",
+    "subCategory": "rally",
+    "titleEn": "ERC Rally Stage Drift",
+    "titlePt": "Derrapagem em Troço de Rali ERC",
+    "location": "ERC Rally Stage",
+    "date": "2026-10-24",
+    "image": "/assets/gallery/motorsport/rally/ERC_24-15.jpg",
+    "tags": [
+      "ERC",
+      "Rally",
+      "Drift"
+    ],
+    "exif": {
+      "camera": "Nikon Z6",
+      "lens": "TAMRON 28-75mm F/2.8 Di III VXD G2 A063Z",
+      "focalLength": "43mm",
+      "exposure": "1/250",
+      "aperture": "f/5.0",
+      "iso": "ISO 64"
+    }
+  },
+  {
+    "id": "ms-rally-11",
+    "category": "motorsport",
+    "subCategory": "rally",
+    "titleEn": "ERC Championship Stage Attack",
+    "titlePt": "Ataque em Classificativa ERC",
+    "location": "ERC Rally Stage",
+    "date": "2026-10-25",
+    "image": "/assets/gallery/motorsport/rally/ERC_25-30.jpg",
+    "tags": [
+      "ERC",
+      "Rally",
+      "Apex"
+    ],
+    "exif": {
+      "camera": "Nikon Z6",
+      "lens": "70.0-200.0 mm f/2.8",
+      "focalLength": "70mm",
+      "exposure": "1/2500",
+      "aperture": "f/2.8",
+      "iso": "ISO 100"
+    }
+  },
+  {
+    "id": "ms-rally-12",
+    "category": "motorsport",
+    "subCategory": "rally",
+    "titleEn": "ERC High-Speed Hairpin Cornering",
+    "titlePt": "Curva de Alta Velocidade no ERC",
+    "location": "ERC Rally Stage",
+    "date": "2026-10-25",
+    "image": "/assets/gallery/motorsport/rally/ERC_25-37.jpg",
+    "tags": [
+      "ERC",
+      "Rally",
+      "Cornering"
+    ],
+    "exif": {
+      "camera": "Nikon Z6",
+      "lens": "70.0-200.0 mm f/2.8",
+      "focalLength": "150mm",
+      "exposure": "1/1000",
       "aperture": "f/2.8",
       "iso": "ISO 100"
     }
@@ -819,6 +959,52 @@ export const rawItems = [
       "exposure": "1/500",
       "aperture": "f/2.8",
       "iso": "ISO 100"
+    }
+  },
+  {
+    "id": "ms-rx-13",
+    "category": "motorsport",
+    "subCategory": "rallycross",
+    "titleEn": "RallyX Championship Dust Battle",
+    "titlePt": "Disputa no Campeonato RallyX entre Poeira",
+    "location": "Rallycross Circuit",
+    "date": "2026-10-24",
+    "image": "/assets/gallery/motorsport/rallycross/RallyX-11.jpg",
+    "tags": [
+      "RallyX",
+      "Supercars",
+      "Rallycross"
+    ],
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "NIKKOR Z 180-600mm f/5.6-6.3 VR",
+      "focalLength": "180mm",
+      "exposure": "1/5000",
+      "aperture": "f/5.6",
+      "iso": "ISO 800"
+    }
+  },
+  {
+    "id": "ms-rx-14",
+    "category": "motorsport",
+    "subCategory": "rallycross",
+    "titleEn": "RallyX Dusk Apex Push",
+    "titlePt": "Ataque à Curva no RallyX ao Entardecer",
+    "location": "Rallycross Circuit",
+    "date": "2026-10-24",
+    "image": "/assets/gallery/motorsport/rallycross/RallyX-25.jpg",
+    "tags": [
+      "RallyX",
+      "Dusk",
+      "Rallycross"
+    ],
+    "exif": {
+      "camera": "Nikon Z6",
+      "lens": "TAMRON 28-75mm F/2.8 Di III VXD G2 A063Z",
+      "focalLength": "75mm",
+      "exposure": "1/1250",
+      "aperture": "f/2.8",
+      "iso": "ISO 800"
     }
   },
   {

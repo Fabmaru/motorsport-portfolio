@@ -112,16 +112,6 @@ export default function HomePage({ lang, t }) {
               >
                 <img src={cat.bannerImage} alt={catTitle} />
                 <div className="category-overlay">
-                  <div style={{
-                    fontSize: '0.75rem',
-                    color: 'var(--accent-blue)',
-                    fontWeight: 800,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {cat.count} {t.hub.photosCount}
-                  </div>
                   <h3 style={{ fontSize: '1.4rem', color: '#FFFFFF', marginBottom: '1rem' }}>
                     {catTitle}
                   </h3>
