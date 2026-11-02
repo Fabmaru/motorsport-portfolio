@@ -53,6 +53,8 @@ export default function AboutPage({ lang, t }) {
           <img
             src="/assets/photographer_portrait.jpg"
             alt="Fábio Martins Photographer"
+            loading="lazy"
+            decoding="async"
             draggable={false}
             onContextMenu={(e) => e.preventDefault()}
             onDragStart={(e) => e.preventDefault()}

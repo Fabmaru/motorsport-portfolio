@@ -168,7 +168,7 @@ const rawItemsData = [
   { id: "ms-circuit-6", category: "motorsport", subCategory: "circuit", titleEn: "Trackside Racing Perspective", titlePt: "Perspetiva de Corrida em Pista", location: "Circuit Trackside", date: "2025-06-15", image: "/assets/gallery/motorsport/circuit/FAB_0060.jpg", tags: ["Trackside", "Speed", "Circuit"] },
   { id: "ms-circuit-7", category: "motorsport", subCategory: "circuit", titleEn: "Wheel-to-Wheel Battle", titlePt: "Disputa Roda a Roda", location: "Circuit Track", date: "2025-06-18", image: "/assets/gallery/motorsport/circuit/FAB_1236.jpg", tags: ["Battle", "Precision", "Circuit"] },
   { id: "ms-circuit-8", category: "motorsport", subCategory: "circuit", titleEn: "Sunset Circuit Stint", titlePt: "Turno ao Pôr do Sol", location: "International Circuit", date: "2025-06-20", image: "/assets/gallery/motorsport/circuit/FAB_1510.jpg", tags: ["Sunset", "Endurance", "Circuit"] },
-  { id: "ms-circuit-9", category: "motorsport", subCategory: "circuit", titleEn: "Vila Real Street Circuit Victory", titlePt: "Vitória no Circuito de Vila Real", location: "Vila Real", date: "2025-07-12", image: "/assets/gallery/motorsport/circuit/Vila_Real_12-99.jpg", tags: ["Vila Real", "Victory", "Circuit"] },
+  { id: "ms-circuit-9", category: "motorsport", subCategory: "circuit", titleEn: "Vila Real Street Circuit Action", titlePt: "Ação no Circuito de Vila Real", location: "Circuito Internacional de Vila Real", date: "2025-07-11", image: "/assets/gallery/motorsport/circuit/Vila_Real_11-28.jpg", tags: ["Vila Real", "Street Circuit", "Circuit"] },
   { id: "ms-circuit-10", category: "motorsport", subCategory: "circuit", titleEn: "ELMS 4 Hours of Portimão Speed Panning", titlePt: "Panning de Alta Velocidade no ELMS em Portimão", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/ELMS-70.jpg", tags: ["ELMS", "Portimão", "Panning", "Circuit"] },
   { id: "ms-circuit-11", category: "motorsport", subCategory: "circuit", titleEn: "European Le Mans Series Dusk Stint", titlePt: "Turno de Entardecer no European Le Mans Series", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/ELMS-91.jpg", tags: ["ELMS", "Endurance", "Portimão", "Circuit"] },
   { id: "ms-circuit-12", category: "motorsport", subCategory: "circuit", titleEn: "Michelin Le Mans Cup Prototype Attack", titlePt: "Ataque de Protótipo na Michelin Le Mans Cup", location: "Autódromo Internacional do Algarve, Portimão", date: "2026-10-10", image: "/assets/gallery/motorsport/circuit/Le_Mans_Cup-6.jpg", tags: ["Le Mans Cup", "LMP3", "Portimão", "Circuit"] },
@@ -193,7 +193,7 @@ const rawItemsData = [
   // RALLYCROSS
   { id: "ms-rx-1", category: "motorsport", subCategory: "rallycross", titleEn: "Montalegre RX World Championship", titlePt: "Mundial de Rallycross em Montalegre", location: "Pista Automóvel de Montalegre", date: "2025-07-26", image: "/assets/gallery/motorsport/rallycross/CPRx_Montalegre-14.jpg", tags: ["Montalegre", "World RX", "Rallycross"] },
   { id: "ms-rx-2", category: "motorsport", subCategory: "rallycross", titleEn: "Euro RX Wheel-to-Wheel Push", titlePt: "Disputa Intensa no Euro RX", location: "Euro RX Circuit", date: "2025-09-12", image: "/assets/gallery/motorsport/rallycross/EuroRX-27.jpg", tags: ["Euro RX", "Push", "Rallycross"] },
-  { id: "ms-rx-3", category: "motorsport", subCategory: "rallycross", titleEn: "Joker Lap Strategy Drama", titlePt: "Estratégia na Joker Lap", location: "Montalegre Circuit", date: "2025-09-12", image: "/assets/gallery/motorsport/rallycross/EuroRX-35_36.png", tags: ["Joker Lap", "Strategy", "Rallycross"] },
+  { id: "ms-rx-3", category: "motorsport", subCategory: "rallycross", titleEn: "Joker Lap Strategy Drama", titlePt: "Estratégia na Joker Lap", location: "Montalegre Circuit", date: "2025-09-12", image: "/assets/gallery/motorsport/rallycross/EuroRX-35_36.jpg", tags: ["Joker Lap", "Strategy", "Rallycross"] },
   { id: "ms-rx-4", category: "motorsport", subCategory: "rallycross", titleEn: "Dirt to Asphalt Transition", titlePt: "Transição Terra-Asfalto", location: "Rallycross Track", date: "2025-04-27", image: "/assets/gallery/motorsport/rallycross/FAB_0130-1.jpg", tags: ["Transition", "Dirt", "Rallycross"] },
   { id: "ms-rx-5", category: "motorsport", subCategory: "rallycross", titleEn: "Supercar Semi-Final Launch", titlePt: "Arranque de Semifinal Supercars", location: "Montalegre RX", date: "2025-03-29", image: "/assets/gallery/motorsport/rallycross/FAB_2772-1.jpg", tags: ["Supercars", "Launch", "Rallycross"] },
   { id: "ms-rx-6", category: "motorsport", subCategory: "rallycross", titleEn: "Kerb Bouncing Power", titlePt: "Ataque Agressivo ao Corretor", location: "Montalegre RX", date: "2025-06-27", image: "/assets/gallery/motorsport/rallycross/FAB_3004.jpg", tags: ["Kerb", "Action", "Rallycross"] },
@@ -263,7 +263,7 @@ const rawItemsData = [
 ];
 
 const itemsWithExif = rawItemsData.map(item => {
-  const exifRaw = parseExif('public' + item.image);
+  const exifRaw = parseExif(path.join(__dirname, '../public', item.image));
   let exif = null;
   if (exifRaw && exifRaw.model) {
     exif = {

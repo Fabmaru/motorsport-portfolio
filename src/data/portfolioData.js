@@ -254,23 +254,23 @@ export const rawItems = [
     "id": "ms-circuit-9",
     "category": "motorsport",
     "subCategory": "circuit",
-    "titleEn": "Vila Real Street Circuit Victory",
-    "titlePt": "Vitória no Circuito de Vila Real",
-    "location": "Vila Real",
-    "date": "2025-07-12",
-    "image": "/assets/gallery/motorsport/circuit/Vila_Real_12-99.jpg",
+    "titleEn": "Vila Real Street Circuit Action",
+    "titlePt": "Ação no Circuito de Vila Real",
+    "location": "Circuito Internacional de Vila Real",
+    "date": "2025-07-11",
+    "image": "/assets/gallery/motorsport/circuit/Vila_Real_11-28.jpg",
     "tags": [
       "Vila Real",
-      "Victory",
+      "Street Circuit",
       "Circuit"
     ],
     "exif": {
       "camera": "Nikon Z6",
       "lens": "TAMRON 28-75mm F/2.8 Di III VXD G2 A063Z",
-      "focalLength": "28mm",
-      "exposure": "1/2500",
+      "focalLength": "75mm",
+      "exposure": "1/2000",
       "aperture": "f/2.8",
-      "iso": "ISO 100"
+      "iso": "ISO 64"
     }
   },
   {
@@ -746,13 +746,20 @@ export const rawItems = [
     "titlePt": "Estratégia na Joker Lap",
     "location": "Montalegre Circuit",
     "date": "2025-09-12",
-    "image": "/assets/gallery/motorsport/rallycross/EuroRX-35_36.png",
+    "image": "/assets/gallery/motorsport/rallycross/EuroRX-35_36.jpg",
     "tags": [
       "Joker Lap",
       "Strategy",
       "Rallycross"
     ],
-    "exif": null
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "NIKKOR Z 180-600mm f/5.6-6.3 VR",
+      "focalLength": "430mm",
+      "exposure": "1/80",
+      "aperture": "f/9.0",
+      "iso": "ISO 50"
+    }
   },
   {
     "id": "ms-rx-4",

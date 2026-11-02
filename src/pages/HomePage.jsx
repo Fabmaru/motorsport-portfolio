@@ -110,7 +110,7 @@ export default function HomePage({ lang, t }) {
                 className="category-card"
                 style={{ textDecoration: 'none' }}
               >
-                <img src={cat.bannerImage} alt={catTitle} />
+                <img src={cat.bannerImage} alt={catTitle} loading="lazy" decoding="async" />
                 <div className="category-overlay">
                   <h3 style={{ fontSize: '1.4rem', color: '#FFFFFF', marginBottom: '1rem' }}>
                     {catTitle}

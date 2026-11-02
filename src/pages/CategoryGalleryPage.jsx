@@ -217,6 +217,7 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                     src={item.image}
                     alt={itemTitle || 'Gallery photo'}
                     loading="lazy"
+                    decoding="async"
                     draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
                     onDragStart={(e) => e.preventDefault()}
