@@ -13,7 +13,7 @@ export const categories = [
     "titleEn": "Motorsport Photography",
     "titlePt": "Fotografia de Desporto Motorizado",
     "bannerImage": "/assets/cat_motorsport.jpg",
-    "count": 59,
+    "count": 60,
     "disciplines": [
       {
         "id": "circuit",
@@ -1012,6 +1012,29 @@ export const rawItems = [
       "exposure": "1/1250",
       "aperture": "f/2.8",
       "iso": "ISO 800"
+    }
+  },
+  {
+    "id": "ms-rx-15",
+    "category": "motorsport",
+    "subCategory": "rallycross",
+    "titleEn": "Euro RX Championship Supercar Battle",
+    "titlePt": "Disputa de Supercars no Euro RX",
+    "location": "Euro RX Circuit",
+    "date": "2026-09-11",
+    "image": "/assets/gallery/motorsport/rallycross/EuroRX-46.jpg",
+    "tags": [
+      "Euro RX",
+      "Supercars",
+      "Rallycross"
+    ],
+    "exif": {
+      "camera": "Nikon Z6 II",
+      "lens": "NIKKOR Z 180-600mm f/5.6-6.3 VR",
+      "focalLength": "600mm",
+      "exposure": "1/125",
+      "aperture": "f/6.3",
+      "iso": "ISO 6400"
     }
   },
   {

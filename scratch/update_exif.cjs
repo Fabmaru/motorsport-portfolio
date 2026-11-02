@@ -126,7 +126,7 @@ const categories = [
     titleEn: "Motorsport Photography",
     titlePt: "Fotografia de Desporto Motorizado",
     bannerImage: "/assets/cat_motorsport.jpg",
-    count: 59,
+    count: 60,
     disciplines: [
       { id: "circuit", titleEn: "Circuit", titlePt: "Velocidade" },
       { id: "rally", titleEn: "Rally", titlePt: "Rali" },
@@ -205,6 +205,7 @@ const rawItemsData = [
   { id: "ms-rx-12", category: "motorsport", subCategory: "rallycross", titleEn: "Lousada Rallycross Supercar Battle", titlePt: "Disputa de Supercars no Rallycross de Lousada", location: "Pista de Costilha, Lousada", date: "2026-10-04", image: "/assets/gallery/motorsport/rallycross/CPRx_Lousada_04-16.jpg", tags: ["Lousada", "Supercars", "Rallycross"] },
   { id: "ms-rx-13", category: "motorsport", subCategory: "rallycross", titleEn: "RallyX Championship Dust Battle", titlePt: "Disputa no Campeonato RallyX entre Poeira", location: "Rallycross Circuit", date: "2026-10-24", image: "/assets/gallery/motorsport/rallycross/RallyX-11.jpg", tags: ["RallyX", "Supercars", "Rallycross"] },
   { id: "ms-rx-14", category: "motorsport", subCategory: "rallycross", titleEn: "RallyX Dusk Apex Push", titlePt: "Ataque à Curva no RallyX ao Entardecer", location: "Rallycross Circuit", date: "2026-10-24", image: "/assets/gallery/motorsport/rallycross/RallyX-25.jpg", tags: ["RallyX", "Dusk", "Rallycross"] },
+  { id: "ms-rx-15", category: "motorsport", subCategory: "rallycross", titleEn: "Euro RX Championship Supercar Battle", titlePt: "Disputa de Supercars no Euro RX", location: "Euro RX Circuit", date: "2026-09-11", image: "/assets/gallery/motorsport/rallycross/EuroRX-46.jpg", tags: ["Euro RX", "Supercars", "Rallycross"] },
 
   // KARTING
   { id: "ms-karting-1", category: "motorsport", subCategory: "karting", titleEn: "National Karting Championship Apex", titlePt: "Campeonato Nacional de Karting", location: "Kartódromo do Porto / Braga", date: "2026-03-01", image: "/assets/gallery/motorsport/karting/20260301-FAB_3720.jpg", tags: ["Karting", "Championship", "Apex"] },
