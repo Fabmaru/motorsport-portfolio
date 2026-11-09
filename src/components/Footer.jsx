@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, ArrowUp } from 'lucide-react';
+import { ScrollReveal } from './SmoothEffects';
 
 export default function Footer({ t }) {
   const scrollToTop = () => {
@@ -8,7 +9,7 @@ export default function Footer({ t }) {
   };
 
   return (
-    <footer style={{
+    <ScrollReveal as="footer" style={{
       background: 'var(--bg-surface)',
       borderTop: '1px solid var(--border-light)',
       padding: '4rem 1.5rem 2rem 1.5rem',
@@ -136,6 +137,6 @@ export default function Footer({ t }) {
           </div>
         </div>
       </div>
-    </footer>
+    </ScrollReveal>
   );
 }

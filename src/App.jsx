@@ -16,7 +16,7 @@ import { translations } from './data/translations';
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname]);
   return null;
 }
@@ -25,6 +25,7 @@ export default function App() {
   const [lang, setLang] = useState('en'); // 'en' or 'pt'
   const [lightboxItem, setLightboxItem] = useState(null);
   const [lightboxList, setLightboxList] = useState([]);
+  const location = useLocation();
 
   const t = translations[lang] || translations.en;
 
@@ -56,7 +57,8 @@ export default function App() {
 
       {/* Main Page Area with Route Switcher */}
       <main style={{ flex: 1 }}>
-        <Routes>
+        <div key={location.pathname} className="page-transition-wrapper">
+          <Routes location={location}>
           {/* Home Route */}
           <Route path="/" element={<HomePage lang={lang} setLang={setLang} t={t} />} />
 
@@ -135,7 +137,8 @@ export default function App() {
 
           {/* Fallback to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+          </Routes>
+        </div>
       </main>
 
       {/* Lightbox Modal */}

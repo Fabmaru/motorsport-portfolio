@@ -128,8 +128,9 @@ export default function LightboxModal({ item, items, onClose, onNavigate, lang, 
         gap: '0.75rem'
       }}>
         <img
+          key={item.id}
           src={item.image}
-          alt="Photo Preview"
+          alt={(lang === 'pt' ? item.titlePt : item.titleEn) || 'Fabmaru Photo Preview'}
           draggable={false}
           onContextMenu={(e) => e.preventDefault()}
           onDragStart={(e) => e.preventDefault()}
@@ -142,7 +143,8 @@ export default function LightboxModal({ item, items, onClose, onNavigate, lang, 
             border: '1px solid var(--border-light)',
             userSelect: 'none',
             WebkitUserSelect: 'none',
-            WebkitTouchCallout: 'none'
+            WebkitTouchCallout: 'none',
+            animation: 'fadeIn 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
           }}
         />
 

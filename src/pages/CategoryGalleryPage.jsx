@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Flag } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { getCategoryUrl, getMotorsportDisciplineUrl } from '../utils/routes';
 import { useDocumentMeta } from '../utils/seo';
+import { ScrollReveal, SmoothImage } from '../components/SmoothEffects';
 
 export default function CategoryGalleryPage({ categoryId, initialDiscipline, onSelectPhoto, lang, t }) {
   const params = useParams();
@@ -196,12 +197,14 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
             gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
             gap: '1.5rem'
           }}>
-            {filteredItems.map(item => {
+            {filteredItems.map((item, idx) => {
               const itemTitle = lang === 'pt' ? item.titlePt : item.titleEn;
 
               return (
-                <div
+                <ScrollReveal
                   key={item.id}
+                  delay={(idx % 6) * 55}
+                  direction="scale"
                   onClick={() => onSelectPhoto(item, filteredItems)}
                   onContextMenu={(e) => e.preventDefault()}
                   className="gallery-item glass-card"
@@ -213,11 +216,9 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                     cursor: 'pointer'
                   }}
                 >
-                  <img
+                  <SmoothImage
                     src={item.image}
-                    alt={itemTitle || 'Gallery photo'}
-                    loading="lazy"
-                    decoding="async"
+                    alt={itemTitle || 'Fabmaru Photo gallery image'}
                     draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
                     onDragStart={(e) => e.preventDefault()}
@@ -225,11 +226,10 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      objectPosition: 'center center',
-                      transition: 'transform 0.4s ease'
+                      objectPosition: 'center center'
                     }}
                   />
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -259,12 +259,14 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
         }}>
           {portfolioData.categories
             .filter(c => c.id !== categoryId)
-            .map(otherCat => {
+            .map((otherCat, idx) => {
               const otherTitle = lang === 'pt' ? otherCat.titlePt : otherCat.titleEn;
               return (
-                <Link
+                <ScrollReveal
                   key={otherCat.id}
+                  as={Link}
                   to={getCategoryUrl(otherCat.id)}
+                  delay={idx * 80}
                   className="glass-card"
                   style={{
                     position: 'relative',
@@ -278,9 +280,9 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                     textDecoration: 'none'
                   }}
                 >
-                  <img
+                  <SmoothImage
                     src={otherCat.bannerImage}
-                    alt={otherTitle}
+                    alt={`${otherTitle} - Fabmaru Photo`}
                     draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
                     onDragStart={(e) => e.preventDefault()}
@@ -291,8 +293,7 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                       height: '100%',
                       objectFit: 'cover',
                       objectPosition: 'center center',
-                      filter: 'brightness(0.55)',
-                      transition: 'transform 0.4s ease'
+                      filter: 'brightness(0.55)'
                     }}
                   />
                   <div style={{
@@ -313,7 +314,7 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                     </span>
                     <ArrowRight size={18} color="var(--accent-blue)" />
                   </div>
-                </Link>
+                </ScrollReveal>
               );
             })}
         </div>

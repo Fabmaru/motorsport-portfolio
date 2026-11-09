@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { getCategoryUrl } from '../utils/routes';
 import { useDocumentMeta } from '../utils/seo';
+import { SmoothImage } from '../components/SmoothEffects';
 
 export default function HomePage({ lang, t }) {
   const pageTitle = lang === 'pt' 
@@ -16,32 +17,68 @@ export default function HomePage({ lang, t }) {
 
   useDocumentMeta(pageTitle, pageDescription);
 
+  const [scrollY, setScrollY] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const categoriesRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY || window.pageYOffset;
+      setScrollY(currentY);
+      if (currentY > 45) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToCategories = () => {
+    if (categoriesRef.current) {
+      categoriesRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Smooth hero parallax & fade calculation
+  const heroProgress = Math.min(scrollY / 500, 1);
+  const heroTextOpacity = Math.max(1 - heroProgress * 1.15, 0);
+  const heroTextTranslate = heroProgress * -45;
+  const heroBgScale = 1 + heroProgress * 0.08;
+
   return (
     <div className="speed-lines">
-      {/* HERO BANNER SECTION */}
+      {/* FULL-SCREEN HERO BANNER SECTION */}
       <section style={{
         position: 'relative',
-        minHeight: '88vh',
+        minHeight: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '8rem 1.5rem 4rem 1.5rem',
+        padding: '6rem 1.5rem 4rem 1.5rem',
         overflow: 'hidden'
       }}>
-        {/* Hero Background Image with Overlay */}
+        {/* Hero Background Image with Smooth Scroll Scale */}
         <div style={{
           position: 'absolute',
           inset: 0,
           backgroundImage: 'url(/assets/hero_banner.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center 40%',
-          filter: 'brightness(0.65)'
+          filter: 'brightness(0.65)',
+          transform: `scale(${heroBgScale})`,
+          transition: 'transform 0.15s ease-out',
+          willChange: 'transform'
         }} />
         
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.15) 0%, rgba(8, 10, 16, 0.95) 100%), linear-gradient(to top, rgba(8, 10, 16, 1) 0%, transparent 40%)'
+          background: 'radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.15) 0%, rgba(8, 10, 16, 0.95) 100%), linear-gradient(to top, rgba(8, 10, 16, 1) 0%, transparent 35%)'
         }} />
 
         {/* Hero Content Box */}
@@ -49,7 +86,11 @@ export default function HomePage({ lang, t }) {
           position: 'relative',
           zIndex: 2,
           maxWidth: '980px',
-          textAlign: 'center'
+          textAlign: 'center',
+          opacity: heroTextOpacity,
+          transform: `translateY(${heroTextTranslate}px)`,
+          transition: 'opacity 0.15s ease-out, transform 0.15s ease-out',
+          willChange: 'opacity, transform'
         }}>
           {/* Main Title */}
           <h1 style={{
@@ -76,18 +117,47 @@ export default function HomePage({ lang, t }) {
             {t.hero.subtitle}
           </p>
         </div>
+
+        {/* Scroll Down Cue at Bottom of Fullscreen Hero */}
+        <button
+          onClick={scrollToCategories}
+          aria-label="Scroll down to portfolio categories"
+          className="hero-scroll-indicator"
+          style={{
+            opacity: hasScrolled ? 0 : 0.85,
+            pointerEvents: hasScrolled ? 'none' : 'auto'
+          }}
+        >
+          <span style={{
+            fontSize: '0.72rem',
+            fontWeight: 700,
+            letterSpacing: '0.22em',
+            textTransform: 'uppercase',
+            color: 'var(--text-muted)'
+          }}>
+            {lang === 'pt' ? 'Explorar' : 'Scroll'}
+          </span>
+          <ChevronDown size={20} color="var(--accent-blue)" className="scroll-chevron-bounce" />
+        </button>
       </section>
 
-      {/* QUICK PREVIEW OF THE 4 CATEGORY BANNERS */}
-      <section style={{
-        padding: '4rem 1.5rem',
-        maxWidth: '1320px',
-        margin: '0 auto'
-      }}>
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '3rem'
-        }}>
+      {/* PORTFOLIO CATEGORIES SECTION - TRANSITIONS IN ON SCROLL */}
+      <section
+        ref={categoriesRef}
+        className={`home-below-fold ${hasScrolled ? 'is-revealed' : ''}`}
+        style={{
+          padding: '5rem 1.5rem 4rem 1.5rem',
+          maxWidth: '1320px',
+          margin: '0 auto'
+        }}
+      >
+        <div
+          className={`home-section-header ${hasScrolled ? 'is-revealed' : ''}`}
+          style={{
+            textAlign: 'center',
+            marginBottom: '3rem'
+          }}
+        >
           <h2 style={{ fontSize: '2.2rem', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
             {t.hub.title}
           </h2>
@@ -101,16 +171,19 @@ export default function HomePage({ lang, t }) {
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '1.5rem'
         }}>
-          {portfolioData.categories.map((cat) => {
+          {portfolioData.categories.map((cat, idx) => {
             const catTitle = lang === 'pt' ? cat.titlePt : cat.titleEn;
             return (
-              <Link 
+              <Link
                 key={cat.id}
                 to={getCategoryUrl(cat.id)}
-                className="category-card"
-                style={{ textDecoration: 'none' }}
+                className={`category-card home-category-reveal ${hasScrolled ? 'is-revealed' : ''}`}
+                style={{
+                  textDecoration: 'none',
+                  transitionDelay: hasScrolled ? `${120 + idx * 110}ms` : '0ms'
+                }}
               >
-                <img src={cat.bannerImage} alt={catTitle} loading="lazy" decoding="async" />
+                <SmoothImage src={cat.bannerImage} alt={`${catTitle} - Fabmaru Photo`} />
                 <div className="category-overlay">
                   <h3 style={{ fontSize: '1.4rem', color: '#FFFFFF', marginBottom: '1rem' }}>
                     {catTitle}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Phone, Instagram, Facebook, Send, CheckCircle, User, Loader2 } from 'lucide-react';
 import { useDocumentMeta } from '../utils/seo';
+import { ScrollReveal } from '../components/SmoothEffects';
 
 export default function ContactPage({ lang, t }) {
   const pageTitle = lang === 'pt' 
@@ -64,23 +65,8 @@ export default function ContactPage({ lang, t }) {
   return (
     <div style={{ padding: '7rem 1.5rem 5rem 1.5rem', maxWidth: '1320px', margin: '0 auto' }}>
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '4rem' }} className="animate-fade-up">
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          background: 'rgba(0, 102, 255, 0.1)',
-          border: '1px solid rgba(0, 102, 255, 0.3)',
-          padding: '0.35rem 1rem',
-          borderRadius: 'var(--radius-full)',
-          color: 'var(--accent-blue)',
-          fontSize: '0.8rem',
-          fontWeight: 800,
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          marginBottom: '1rem'
-        }}>
-          <Mail size={14} />
+      <ScrollReveal style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <div className="section-overline">
           {lang === 'pt' ? 'RESERVAS E ACREDITAÇÕES' : 'BOOKINGS & ACCREDITATION'}
         </div>
 
@@ -91,7 +77,7 @@ export default function ContactPage({ lang, t }) {
         <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '680px', margin: '0 auto' }}>
           {t.contact.subtitle}
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* Grid: Form & Direct Contact Details */}
       <div style={{
@@ -101,7 +87,7 @@ export default function ContactPage({ lang, t }) {
         alignItems: 'start'
       }}>
         {/* Contact Form Card */}
-        <div className="glass-card" style={{ padding: '2.5rem' }}>
+        <ScrollReveal direction="left" delay={80} className="glass-card" style={{ padding: '2.5rem' }}>
           {submitted ? (
             <div style={{
               textAlign: 'center',
@@ -303,10 +289,10 @@ export default function ContactPage({ lang, t }) {
               </button>
             </form>
           )}
-        </div>
+        </ScrollReveal>
 
         {/* Direct Contact Cards & Socials */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        <ScrollReveal direction="right" delay={160} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           <div className="glass-card" style={{ padding: '2rem' }}>
             <h3 style={{ fontSize: '1.25rem', marginBottom: '1.5rem', color: '#FFFFFF' }}>
               {lang === 'pt' ? 'INFORMACÃO DE CONTACTO DIRETO' : 'DIRECT CONTACT INFO'}
@@ -398,7 +384,7 @@ export default function ContactPage({ lang, t }) {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </div>
   );

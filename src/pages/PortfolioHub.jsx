@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { getCategoryUrl } from '../utils/routes';
 import { useDocumentMeta } from '../utils/seo';
+import { ScrollReveal, SmoothImage } from '../components/SmoothEffects';
 
 export default function PortfolioHub({ lang, t }) {
   const pageTitle = lang === 'pt' 
@@ -19,7 +20,7 @@ export default function PortfolioHub({ lang, t }) {
   return (
     <div style={{ padding: '7rem 1.5rem 5rem 1.5rem', maxWidth: '1320px', margin: '0 auto' }}>
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '4rem' }} className="animate-fade-up">
+      <ScrollReveal style={{ textAlign: 'center', marginBottom: '4rem' }}>
         <h1 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', textTransform: 'uppercase', marginBottom: '1rem' }}>
           {t.hub.title}
         </h1>
@@ -27,7 +28,7 @@ export default function PortfolioHub({ lang, t }) {
         <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '680px', margin: '0 auto' }}>
           {t.hub.subtitle}
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* 4 Category Cards List */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
@@ -35,9 +36,11 @@ export default function PortfolioHub({ lang, t }) {
           const title = lang === 'pt' ? cat.titlePt : cat.titleEn;
 
           return (
-            <Link
+            <ScrollReveal
               key={cat.id}
+              as={Link}
               to={getCategoryUrl(cat.id)}
+              delay={index * 80}
               className="glass-card hub-card-row"
               style={{ textDecoration: 'none' }}
             >
@@ -47,34 +50,16 @@ export default function PortfolioHub({ lang, t }) {
                 position: 'relative',
                 overflow: 'hidden'
               }}>
-                <img
+                <SmoothImage
                   src={cat.bannerImage}
-                  alt={title}
-                  loading="lazy"
-                  decoding="async"
+                  alt={`${title} - Fabmaru Photo`}
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    objectPosition: 'center center',
-                    transition: 'transform 0.6s ease'
+                    objectPosition: 'center center'
                   }}
                 />
-                <div style={{
-                  position: 'absolute',
-                  top: '1rem',
-                  left: '1rem',
-                  background: 'rgba(8, 10, 16, 0.85)',
-                  backdropFilter: 'blur(8px)',
-                  padding: '0.4rem 0.9rem',
-                  borderRadius: 'var(--radius-full)',
-                  fontSize: '0.75rem',
-                  fontWeight: 800,
-                  color: 'var(--accent-blue)',
-                  border: '1px solid rgba(0, 102, 255, 0.4)'
-                }}>
-                  {cat.count} {t.hub.photosCount}
-                </div>
               </div>
 
               {/* Text Content Col */}
@@ -105,7 +90,7 @@ export default function PortfolioHub({ lang, t }) {
                   </span>
                 </div>
               </div>
-            </Link>
+            </ScrollReveal>
           );
         })}
       </div>

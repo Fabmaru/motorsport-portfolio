@@ -1,6 +1,7 @@
 import React from 'react';
 import { Camera } from 'lucide-react';
 import { useDocumentMeta } from '../utils/seo';
+import { ScrollReveal, SmoothImage } from '../components/SmoothEffects';
 
 export default function AboutPage({ lang, t }) {
   const pageTitle = lang === 'pt' 
@@ -16,30 +17,15 @@ export default function AboutPage({ lang, t }) {
   return (
     <div style={{ padding: '7rem 1.5rem 5rem 1.5rem', maxWidth: '1320px', margin: '0 auto' }}>
       {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '4rem' }} className="animate-fade-up">
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '0.5rem',
-          background: 'rgba(0, 102, 255, 0.1)',
-          border: '1px solid rgba(0, 102, 255, 0.3)',
-          padding: '0.35rem 1rem',
-          borderRadius: 'var(--radius-full)',
-          color: 'var(--accent-blue)',
-          fontSize: '0.8rem',
-          fontWeight: 800,
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          marginBottom: '1rem'
-        }}>
-          <Camera size={14} />
+      <ScrollReveal style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <div className="section-overline">
           {t.about.subtitle}
         </div>
 
         <h1 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', textTransform: 'uppercase', marginBottom: '1rem' }}>
           {t.about.title}
         </h1>
-      </div>
+      </ScrollReveal>
 
       {/* Main Grid: Portrait & Bio */}
       <div style={{
@@ -49,12 +35,10 @@ export default function AboutPage({ lang, t }) {
         alignItems: 'center'
       }}>
         {/* Photographer Image Card */}
-        <div className="glass-card" style={{ padding: '1rem', position: 'relative', overflow: 'hidden' }}>
-          <img
+        <ScrollReveal direction="left" delay={80} className="glass-card" style={{ padding: '1rem', position: 'relative', overflow: 'hidden' }}>
+          <SmoothImage
             src="/assets/photographer_portrait.jpg"
-            alt="Fábio Martins Photographer"
-            loading="lazy"
-            decoding="async"
+            alt={lang === 'pt' ? 'Fábio Martins - Fotógrafo de Desporto Motorizado e Desporto no Porto, Portugal' : 'Fábio Martins - Motorsport and Sports Photographer in Porto, Portugal'}
             draggable={false}
             onContextMenu={(e) => e.preventDefault()}
             onDragStart={(e) => e.preventDefault()}
@@ -110,10 +94,10 @@ export default function AboutPage({ lang, t }) {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Bio Text */}
-        <div>
+        <ScrollReveal direction="right" delay={160}>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
             {t.about.bioP1}
           </p>
@@ -129,7 +113,7 @@ export default function AboutPage({ lang, t }) {
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7 }}>
             {t.about.bioP4}
           </p>
-        </div>
+        </ScrollReveal>
       </div>
     </div>
   );
