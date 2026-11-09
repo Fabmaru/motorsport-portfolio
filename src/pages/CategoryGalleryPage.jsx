@@ -219,6 +219,8 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                 >
                   <SmoothImage
                     src={item.thumb || item.image}
+                    srcSet={item.thumb ? `${item.thumb} 1200w, ${item.image} 1920w` : undefined}
+                    sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 430px"
                     alt={itemTitle || 'Fabmaru Photo gallery image'}
                     loading={isAboveFold ? 'eager' : 'lazy'}
                     fetchPriority={idx < 3 ? 'high' : 'auto'}
