@@ -37,7 +37,9 @@ export default function AboutPage({ lang, t }) {
         {/* Photographer Image Card */}
         <ScrollReveal direction="left" delay={80} className="glass-card" style={{ padding: '1rem', position: 'relative', overflow: 'hidden' }}>
           <SmoothImage
-            src="/assets/photographer_portrait.jpg"
+            src="/assets/photographer_portrait.webp"
+            loading="eager"
+            fetchPriority="high"
             alt={lang === 'pt' ? 'Fábio Martins - Fotógrafo de Desporto Motorizado e Desporto no Porto, Portugal' : 'Fábio Martins - Motorsport and Sports Photographer in Porto, Portugal'}
             draggable={false}
             onContextMenu={(e) => e.preventDefault()}

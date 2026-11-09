@@ -66,7 +66,7 @@ export default function HomePage({ lang, t }) {
         <div style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'url(/assets/hero_banner.jpg)',
+          backgroundImage: 'url(/assets/hero_banner.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center 40%',
           filter: 'brightness(0.65)',

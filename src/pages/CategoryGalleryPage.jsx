@@ -199,11 +199,12 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
           }}>
             {filteredItems.map((item, idx) => {
               const itemTitle = lang === 'pt' ? item.titlePt : item.titleEn;
+              const isAboveFold = idx < 6;
 
               return (
                 <ScrollReveal
                   key={item.id}
-                  delay={(idx % 6) * 55}
+                  delay={(idx % 3) * 25}
                   direction="scale"
                   onClick={() => onSelectPhoto(item, filteredItems)}
                   onContextMenu={(e) => e.preventDefault()}
@@ -217,8 +218,10 @@ export default function CategoryGalleryPage({ categoryId, initialDiscipline, onS
                   }}
                 >
                   <SmoothImage
-                    src={item.image}
+                    src={item.thumb || item.image}
                     alt={itemTitle || 'Fabmaru Photo gallery image'}
+                    loading={isAboveFold ? 'eager' : 'lazy'}
+                    fetchPriority={idx < 3 ? 'high' : 'auto'}
                     draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
                     onDragStart={(e) => e.preventDefault()}

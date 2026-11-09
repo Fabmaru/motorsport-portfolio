@@ -3,6 +3,25 @@ import { X, ChevronLeft, ChevronRight, Maximize2, Camera, Sliders } from 'lucide
 
 export default function LightboxModal({ item, items, onClose, onNavigate, lang, t }) {
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [fullLoaded, setFullLoaded] = useState(false);
+
+  useEffect(() => {
+    setFullLoaded(false);
+    // Preload adjacent full-resolution images for instant navigation
+    if (item && items && items.length > 1) {
+      const idx = items.findIndex((i) => i.id === item.id);
+      if (idx !== -1) {
+        const nextItem = items[(idx + 1) % items.length];
+        const prevItem = items[(idx - 1 + items.length) % items.length];
+        [nextItem, prevItem].forEach((neighbor) => {
+          if (neighbor && neighbor.image) {
+            const preloadImg = new Image();
+            preloadImg.src = neighbor.image;
+          }
+        });
+      }
+    }
+  }, [item, items]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -129,7 +148,7 @@ export default function LightboxModal({ item, items, onClose, onNavigate, lang, 
       }}>
         <img
           key={item.id}
-          src={item.image}
+          src={fullLoaded ? item.image : (item.thumb || item.image)}
           alt={(lang === 'pt' ? item.titlePt : item.titleEn) || 'Fabmaru Photo Preview'}
           draggable={false}
           onContextMenu={(e) => e.preventDefault()}
@@ -144,9 +163,18 @@ export default function LightboxModal({ item, items, onClose, onNavigate, lang, 
             userSelect: 'none',
             WebkitUserSelect: 'none',
             WebkitTouchCallout: 'none',
-            animation: 'fadeIn 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
+            animation: 'fadeIn 0.2s cubic-bezier(0.22, 1, 0.36, 1)'
           }}
         />
+        {!fullLoaded && item.thumb && (
+          <img
+            src={item.image}
+            alt=""
+            aria-hidden="true"
+            onLoad={() => setFullLoaded(true)}
+            style={{ display: 'none' }}
+          />
+        )}
 
         {/* Technical Specs Bar (Only rendered if EXIF metadata exists) */}
         {hasExif && (
