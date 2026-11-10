@@ -443,10 +443,7 @@ button {
    MINIMAL OVERLINE HEADER (ABOUT & CONTACT)
    ========================================================================== */
 .section-overline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  display: inline-block;
   font-family: var(--font-heading);
   font-size: 0.82rem;
   font-weight: 700;
@@ -457,33 +454,10 @@ button {
   margin-bottom: 1.15rem;
 }
 
-.section-overline::before,
-.section-overline::after {
-  content: '';
-  display: block;
-  width: 44px;
-  height: 1.5px;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0, 102, 255, 0.6);
-}
-
-.section-overline::before {
-  background: linear-gradient(90deg, transparent 0%, var(--accent-blue) 70%, var(--accent-cyan) 100%);
-}
-
-.section-overline::after {
-  background: linear-gradient(270deg, transparent 0%, var(--accent-blue) 70%, var(--accent-cyan) 100%);
-}
-
 @media (max-width: 540px) {
   .section-overline {
     font-size: 0.72rem;
     letter-spacing: 0.16em;
-    gap: 0.65rem;
-  }
-  .section-overline::before,
-  .section-overline::after {
-    width: 24px;
   }
 }
 
